@@ -16,5 +16,20 @@ namespace RestarurantManagement
         {
             InitializeComponent();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void formMain_Load(object sender, EventArgs e)
+        {
+            lblUser.Text = MainClass.USER;
+        }
     }
 }

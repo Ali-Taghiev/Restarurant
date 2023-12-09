@@ -29,12 +29,20 @@ namespace RestarurantManagement
             if(dt.Rows.Count > 0)
             {
                 isValid=true;
+                USER = dt.Rows[0]["uName"].ToString();
+                
             }
             
 
 
 
             return isValid;
+        }
+        public static string user;
+        public static string USER
+        {
+            get { return user; }
+            private set { user = value; }
         }
     
     
