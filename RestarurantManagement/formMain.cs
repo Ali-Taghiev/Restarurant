@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestarurantManagement.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,6 +45,11 @@ namespace RestarurantManagement
         private void btnHome_Click(object sender, EventArgs e)
         {
             AddControls(new FormHome());
+        }
+
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            AddControls(new formCategoryView());
         }
     }
 }
