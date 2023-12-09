@@ -56,6 +56,8 @@
             // 
             // guna2Separator1
             // 
+            this.guna2Separator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Separator1.Location = new System.Drawing.Point(54, 168);
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(861, 10);
@@ -79,6 +81,7 @@
             // 
             // txtboxSearch
             // 
+            this.txtboxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtboxSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtboxSearch.DefaultText = "";
             this.txtboxSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
