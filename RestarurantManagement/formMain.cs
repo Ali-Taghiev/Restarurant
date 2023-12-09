@@ -17,6 +17,15 @@ namespace RestarurantManagement
             InitializeComponent();
         }
 
+        public  void AddControls(Form f)
+        {
+            CenterPanel.Controls.Clear();
+            f.Dock = DockStyle.Fill;
+            f.TopLevel = false;
+            CenterPanel.Controls.Add(f);
+            f.Show();
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -30,6 +39,11 @@ namespace RestarurantManagement
         private void formMain_Load(object sender, EventArgs e)
         {
             lblUser.Text = MainClass.USER;
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            AddControls(new FormHome());
         }
     }
 }
