@@ -1,5 +1,4 @@
-﻿using Guna.UI2.WinForms;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,29 +11,19 @@ using System.Windows.Forms;
 
 namespace RestarurantManagement.Model
 {
-    public partial class formCategoryAdd : SampleAdd
+    public partial class formTableAdd : SampleAdd
     {
-        public formCategoryAdd()
+        public formTableAdd()
         {
             InitializeComponent();
         }
-
-        private void formCategoryAdd_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        public override void btnClose_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         public int id = 0;
+
         public override void btnSave_Click_1(object sender, EventArgs e)
         {
             string query = "";
 
-            if(id == 0)
+            if (id == 0)
             {
                 query = "insert into category Values(@Name)";
 

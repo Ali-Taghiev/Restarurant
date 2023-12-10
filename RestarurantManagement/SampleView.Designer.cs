@@ -33,10 +33,12 @@
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.btnAdd = new Guna.UI2.WinForms.Guna2ImageButton();
             this.txtboxSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.SuspendLayout();
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(548, 63);
             this.label1.Name = "label1";
@@ -102,6 +104,15 @@
             this.txtboxSearch.TabIndex = 1;
             this.txtboxSearch.TextChanged += new System.EventHandler(this.txtboxSearch_TextChanged);
             // 
+            // guna2MessageDialog1
+            // 
+            this.guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.guna2MessageDialog1.Caption = "RMS";
+            this.guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Question;
+            this.guna2MessageDialog1.Parent = this;
+            this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
+            this.guna2MessageDialog1.Text = null;
+            // 
             // SampleView
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -123,10 +134,11 @@
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         public System.Windows.Forms.Label label1;
         public Guna.UI2.WinForms.Guna2TextBox txtboxSearch;
         public Guna.UI2.WinForms.Guna2ImageButton btnAdd;
         public System.Windows.Forms.Label label2;
+        public Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
+        public Guna.UI2.WinForms.Guna2Separator guna2Separator1;
     }
 }

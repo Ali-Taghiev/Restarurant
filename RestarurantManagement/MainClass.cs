@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -63,7 +64,7 @@ namespace RestarurantManagement
                 {
                     cmd.Parameters.AddWithValue(item.Key.ToString(), item.Value);
                 }
-                if(con.State==ConnectionState.Closed) { con.Open(); }
+                if (con.State == ConnectionState.Closed) { con.Open(); }
                 result = cmd.ExecuteNonQuery();
                 if (con.State == ConnectionState.Open) { con.Close(); }
             }
@@ -79,8 +80,12 @@ namespace RestarurantManagement
 
         // For Loading Data from DATabase
 
-        public static void LoadData(string query,DataGridView dgv,ListBox lb)
+        public static void LoadData(string query, DataGridView dgv, ListBox lb)
         {
+
+            //Serial no in Datagridview
+
+            dgv.CellFormatting += new DataGridViewCellFormattingEventHandler(dgv_CellFormatting);
             try
             {
                 SqlCommand cmd = new SqlCommand(query, con);
@@ -88,7 +93,7 @@ namespace RestarurantManagement
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 dataAdapter.Fill(dt);
-               
+
                 for (int i = 0; i < lb.Items.Count; i++)
                 {
                     string columnName = ((DataGridViewColumn)lb.Items[i]).Name;
@@ -105,5 +110,40 @@ namespace RestarurantManagement
 
 
         }
+        private static void dgv_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+
+            Guna.UI2.WinForms.Guna2DataGridView dgv = (Guna.UI2.WinForms.Guna2DataGridView)sender;
+            int count = 0;
+
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                count++;
+                row.Cells[0].Value = count;
+            }
+        }
+
+        //Blur background when other form opened
+        public static void BlurBackgorund(Form Model)
+        {
+            Form Background = new Form();
+            using (Model)
+            {
+                
+                Background.StartPosition = FormStartPosition.Manual;
+                Background.FormBorderStyle = FormBorderStyle.None;
+                Background.Opacity = 0.5d;
+                Background.BackColor = Color.Black;
+                Background.Size = formMain.Instance.Size;
+                Background.Location = formMain.Instance.Location;
+                Background.ShowInTaskbar = false;
+                Background.Show();
+                Model.Owner = Background;
+                Model.ShowDialog(Background);
+                Background.Dispose();
+            }
+        }
+
+
     }
 }

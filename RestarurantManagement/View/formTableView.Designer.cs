@@ -1,6 +1,6 @@
 ﻿namespace RestarurantManagement.View
 {
-    partial class formCategoryView
+    partial class formTableView
     {
         /// <summary>
         /// Required designer variable.
@@ -40,6 +40,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(621, 59);
+            // 
             // btnAdd
             // 
             this.btnAdd.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
@@ -48,14 +52,13 @@
             this.btnAdd.ImageFlip = Guna.UI2.WinForms.Enums.FlipOrientation.Normal;
             this.btnAdd.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             // 
-            // label2
-            // 
-            this.label2.Size = new System.Drawing.Size(152, 32);
-            this.label2.Text = "Category List";
-            // 
             // guna2MessageDialog1
             // 
             this.guna2MessageDialog1.Parent = null;
+            // 
+            // guna2Separator1
+            // 
+            this.guna2Separator1.Size = new System.Drawing.Size(862, 10);
             // 
             // guna2DataGridView1
             // 
@@ -89,13 +92,13 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(54, 211);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(54, 188);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowHeadersWidth = 51;
             this.guna2DataGridView1.RowTemplate.Height = 24;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(861, 314);
-            this.guna2DataGridView1.TabIndex = 4;
+            this.guna2DataGridView1.Size = new System.Drawing.Size(862, 384);
+            this.guna2DataGridView1.TabIndex = 5;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
@@ -117,7 +120,7 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 24;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
+            this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick_1);
             // 
             // dgvSno
             // 
@@ -163,14 +166,15 @@
             this.dgvdel.Name = "dgvdel";
             this.dgvdel.Width = 50;
             // 
-            // formCategoryView
+            // formTableView
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(965, 562);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(981, 584);
             this.Controls.Add(this.guna2DataGridView1);
-            this.Name = "formCategoryView";
-            this.Text = "formCategoryView";
-            this.Load += new System.EventHandler(this.formCategoryView_Load);
+            this.Name = "formTableView";
+            this.Text = "formTableView";
+            this.Load += new System.EventHandler(this.formTableView_Load);
             this.Controls.SetChildIndex(this.guna2Separator1, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);

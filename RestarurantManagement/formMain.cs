@@ -18,6 +18,23 @@ namespace RestarurantManagement
             InitializeComponent();
         }
 
+        //For Accesing formMain
+
+        static formMain _obj;
+
+        public static formMain Instance
+        {
+            get { 
+            if(_obj == null)
+                {
+                    _obj = new formMain();
+                }
+            return _obj;
+            }
+            
+    
+        }
+
         public  void AddControls(Form f)
         {
             CenterPanel.Controls.Clear();
@@ -40,6 +57,7 @@ namespace RestarurantManagement
         private void formMain_Load(object sender, EventArgs e)
         {
             lblUser.Text = MainClass.USER;
+            _obj = this;
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -50,6 +68,11 @@ namespace RestarurantManagement
         private void btnCategory_Click(object sender, EventArgs e)
         {
             AddControls(new formCategoryView());
+        }
+
+        private void btnTables_Click(object sender, EventArgs e)
+        {
+            AddControls(new formTableView());
         }
     }
 }

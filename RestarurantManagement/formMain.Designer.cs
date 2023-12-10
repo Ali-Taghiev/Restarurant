@@ -203,6 +203,7 @@
             this.btnTables.TabIndex = 2;
             this.btnTables.Text = "Tables";
             this.btnTables.UseTransparentBackground = true;
+            this.btnTables.Click += new System.EventHandler(this.btnTables_Click);
             // 
             // btnProducts
             // 
