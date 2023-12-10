@@ -39,7 +39,7 @@
             // btnSave
             // 
             this.btnSave.TabIndex = 0;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // guna2ImageButton1
             // 
@@ -54,6 +54,7 @@
             // label1
             // 
             this.label1.Size = new System.Drawing.Size(119, 32);
+            this.label1.TabIndex = 0;
             this.label1.Text = "Add Table";
             // 
             // label2

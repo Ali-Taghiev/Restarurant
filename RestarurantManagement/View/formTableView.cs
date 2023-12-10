@@ -33,8 +33,7 @@ namespace RestarurantManagement.View
         }
         public override void btnAdd_Click(object sender, EventArgs e)
         {
-            //formCategoryAdd form = new formCategoryAdd();
-            //form.ShowDialog();
+            
 
             //Added Blur background effect 
             MainClass.BlurBackgorund(new formTableAdd());
@@ -58,7 +57,7 @@ namespace RestarurantManagement.View
                 formTableAdd form = new formTableAdd();
                 form.id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
                 form.txtName.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvName"].Value);
-                form.ShowDialog();
+                MainClass.BlurBackgorund(form);
                 GetData();
             }
 

@@ -24,10 +24,7 @@ namespace RestarurantManagement.Model
 
         }
 
-        public override void btnClose_Click_1(object sender, EventArgs e)
-        {
-
-        }
+        
 
         public int id = 0;
         public override void btnSave_Click_1(object sender, EventArgs e)

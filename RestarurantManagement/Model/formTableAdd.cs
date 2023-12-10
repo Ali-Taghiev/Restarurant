@@ -19,18 +19,25 @@ namespace RestarurantManagement.Model
         }
         public int id = 0;
 
-        public override void btnSave_Click_1(object sender, EventArgs e)
+        
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
         {
             string query = "";
 
             if (id == 0)
             {
-                query = "insert into category Values(@Name)";
+                query = "insert into tables Values(@Name)";
 
             }
             else
             {
-                query = "update category Set catName =@Name where catID=@id";
+                query = "update tables Set tname =@Name where tid=@id";
 
             }
 
@@ -44,12 +51,6 @@ namespace RestarurantManagement.Model
                 id = 0;
                 txtName.Focus();
             }
-
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

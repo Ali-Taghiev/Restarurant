@@ -58,7 +58,7 @@ namespace RestarurantManagement.View
                 formCategoryAdd form = new formCategoryAdd();
                 form.id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
                 form.txtName.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvName"].Value);
-                form.ShowDialog();
+                MainClass.BlurBackgorund(form);
                 GetData();
             }
 
