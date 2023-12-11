@@ -82,7 +82,7 @@ namespace RestarurantManagement
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
-            //AddControls(new formProductsView());
+            AddControls(new formProductView());
         }
     }
 }

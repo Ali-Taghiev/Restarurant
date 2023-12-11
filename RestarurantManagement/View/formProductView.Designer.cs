@@ -35,8 +35,9 @@
             this.dgvSno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcatID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvedit = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvdel = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
@@ -58,6 +59,10 @@
             // 
             this.label2.Size = new System.Drawing.Size(146, 32);
             this.label2.Text = "Product Add";
+            // 
+            // guna2MessageDialog1
+            // 
+            this.guna2MessageDialog1.Parent = null;
             // 
             // guna2Separator1
             // 
@@ -84,8 +89,9 @@
             this.dgvSno,
             this.dgvid,
             this.dgvName,
-            this.dgvPhone,
-            this.dgvRole,
+            this.dgvPrice,
+            this.dgvcatID,
+            this.dgvCat,
             this.dgvedit,
             this.dgvdel});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -125,6 +131,7 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 24;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
             // 
             // dgvSno
             // 
@@ -148,17 +155,24 @@
             this.dgvName.MinimumWidth = 6;
             this.dgvName.Name = "dgvName";
             // 
-            // dgvPhone
+            // dgvPrice
             // 
-            this.dgvPhone.HeaderText = "Phone";
-            this.dgvPhone.MinimumWidth = 6;
-            this.dgvPhone.Name = "dgvPhone";
+            this.dgvPrice.HeaderText = "Price";
+            this.dgvPrice.MinimumWidth = 6;
+            this.dgvPrice.Name = "dgvPrice";
             // 
-            // dgvRole
+            // dgvcatID
             // 
-            this.dgvRole.HeaderText = "Role";
-            this.dgvRole.MinimumWidth = 6;
-            this.dgvRole.Name = "dgvRole";
+            this.dgvcatID.HeaderText = "cID";
+            this.dgvcatID.MinimumWidth = 6;
+            this.dgvcatID.Name = "dgvcatID";
+            this.dgvcatID.Visible = false;
+            // 
+            // dgvCat
+            // 
+            this.dgvCat.HeaderText = "Category";
+            this.dgvCat.MinimumWidth = 6;
+            this.dgvCat.Name = "dgvCat";
             // 
             // dgvedit
             // 
@@ -190,6 +204,7 @@
             this.Controls.Add(this.guna2DataGridView1);
             this.Name = "formProductView";
             this.Text = "formProductView";
+            this.Load += new System.EventHandler(this.formProductView_Load);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.btnAdd, 0);
@@ -207,8 +222,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSno;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvid;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvPhone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvRole;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcatID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvCat;
         private System.Windows.Forms.DataGridViewImageColumn dgvedit;
         private System.Windows.Forms.DataGridViewImageColumn dgvdel;
     }

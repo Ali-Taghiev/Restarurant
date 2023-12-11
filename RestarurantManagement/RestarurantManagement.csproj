@@ -145,6 +145,9 @@
     <EmbeddedResource Include="Model\formCategoryAdd.resx">
       <DependentUpon>formCategoryAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Model\formProductAdd.resx">
+      <DependentUpon>formProductAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Model\formStaffAdd.resx">
       <DependentUpon>formStaffAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -318,6 +321,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\trash-can.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dairy-products.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -129,7 +129,7 @@ namespace RestarurantManagement
             Form Background = new Form();
             using (Model)
             {
-                
+
                 Background.StartPosition = FormStartPosition.Manual;
                 Background.FormBorderStyle = FormBorderStyle.None;
                 Background.Opacity = 0.5d;
@@ -144,6 +144,22 @@ namespace RestarurantManagement
             }
         }
 
+        //Fill ComboBoxes
+
+        public static void ComboBoxFill(string query , ComboBox cb)
+        {
+            SqlCommand cmd = new SqlCommand(query,con);
+                cmd.CommandType = CommandType.Text;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            cb.DisplayMember = "name";
+            cb.ValueMember = "id";
+            cb.DataSource = dt;
+            cb.SelectedIndex = -1;
+
+        }
 
     }
 }
