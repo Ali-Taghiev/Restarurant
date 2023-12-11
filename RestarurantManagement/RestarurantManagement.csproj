@@ -52,12 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="deleted.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="deleted.Designer.cs">
-      <DependentUpon>deleted.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +76,18 @@
     </Compile>
     <Compile Include="Model\formCategoryAdd.Designer.cs">
       <DependentUpon>formCategoryAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\formProductAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\formProductAdd.Designer.cs">
+      <DependentUpon>formProductAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\formStaffAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\formStaffAdd.Designer.cs">
+      <DependentUpon>formStaffAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\formTableAdd.cs">
       <SubType>Form</SubType>
@@ -109,15 +115,24 @@
     <Compile Include="View\formCategoryView.Designer.cs">
       <DependentUpon>formCategoryView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\formProductView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\formProductView.Designer.cs">
+      <DependentUpon>formProductView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\formStaffView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\formStaffView.Designer.cs">
+      <DependentUpon>formStaffView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\formTableView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\formTableView.Designer.cs">
       <DependentUpon>formTableView.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="deleted.resx">
-      <DependentUpon>deleted.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormHome.resx">
       <DependentUpon>FormHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Model\formCategoryAdd.resx">
       <DependentUpon>formCategoryAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\formStaffAdd.resx">
+      <DependentUpon>formStaffAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model\formTableAdd.resx">
       <DependentUpon>formTableAdd.cs</DependentUpon>
@@ -146,6 +164,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\formCategoryView.resx">
       <DependentUpon>formCategoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\formProductView.resx">
+      <DependentUpon>formProductView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\formStaffView.resx">
+      <DependentUpon>formStaffView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\formTableView.resx">
       <DependentUpon>formTableView.cs</DependentUpon>

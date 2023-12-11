@@ -8,23 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RestarurantManagement
+namespace RestarurantManagement.View
 {
-    public partial class deleted : Form
+    public partial class formProductView : SampleView
     {
-        public deleted()
+        public formProductView()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

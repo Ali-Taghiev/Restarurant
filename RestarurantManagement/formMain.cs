@@ -74,5 +74,15 @@ namespace RestarurantManagement
         {
             AddControls(new formTableView());
         }
+
+        private void btnStaff_Click(object sender, EventArgs e)
+        {
+            AddControls(new formStaffView());
+        }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            //AddControls(new formProductsView());
+        }
     }
 }
