@@ -149,6 +149,7 @@
             this.btnPOS.TabIndex = 2;
             this.btnPOS.Text = "POS";
             this.btnPOS.UseTransparentBackground = true;
+            this.btnPOS.Click += new System.EventHandler(this.btnPOS_Click);
             // 
             // btnStaff
             // 

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RestarurantManagement.Model;
 
 namespace RestarurantManagement
 {
@@ -83,6 +84,12 @@ namespace RestarurantManagement
         private void btnProducts_Click(object sender, EventArgs e)
         {
             AddControls(new formProductView());
+        }
+
+        private void btnPOS_Click(object sender, EventArgs e)
+        {
+            formPOS form = new formPOS();
+            form.Show();
         }
     }
 }

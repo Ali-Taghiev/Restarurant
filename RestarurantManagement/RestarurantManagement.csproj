@@ -77,6 +77,12 @@
     <Compile Include="Model\formCategoryAdd.Designer.cs">
       <DependentUpon>formCategoryAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\formPOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\formPOS.Designer.cs">
+      <DependentUpon>formPOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\formProductAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Model\formCategoryAdd.resx">
       <DependentUpon>formCategoryAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\formPOS.resx">
+      <DependentUpon>formPOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model\formProductAdd.resx">
       <DependentUpon>formProductAdd.cs</DependentUpon>
@@ -324,6 +333,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\dairy-products.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\privacy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\receipt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fast-delivery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\take-away.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dinner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power-off.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
