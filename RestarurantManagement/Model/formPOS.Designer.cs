@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formPOS));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnDinIn = new Guna.UI2.WinForms.Guna2Button();
             this.btnTakeAway = new Guna.UI2.WinForms.Guna2Button();
@@ -58,10 +59,14 @@
             this.dgvQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ucProduct1 = new RestarurantManagement.Model.ucProduct();
+            this.ucProduct2 = new RestarurantManagement.Model.ucProduct();
+            this.ucProduct3 = new RestarurantManagement.Model.ucProduct();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryPanel)).BeginInit();
+            this.ProductsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,7 +89,7 @@
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1100, 115);
+            this.guna2Panel1.Size = new System.Drawing.Size(1141, 115);
             this.guna2Panel1.TabIndex = 0;
             // 
             // btnDinIn
@@ -310,7 +315,7 @@
             this.btnExit.BackColor = System.Drawing.Color.Transparent;
             this.btnExit.Image = global::RestarurantManagement.Properties.Resources.power_off;
             this.btnExit.ImageRotate = 0F;
-            this.btnExit.Location = new System.Drawing.Point(1016, 19);
+            this.btnExit.Location = new System.Drawing.Point(1057, 19);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(69, 64);
             this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -336,9 +341,9 @@
             // 
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 565);
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 679);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1100, 108);
+            this.guna2Panel2.Size = new System.Drawing.Size(1141, 108);
             this.guna2Panel2.TabIndex = 0;
             // 
             // CategoryPanel
@@ -371,7 +376,7 @@
             this.CategoryPanel.RowHeadersVisible = false;
             this.CategoryPanel.RowHeadersWidth = 51;
             this.CategoryPanel.RowTemplate.Height = 24;
-            this.CategoryPanel.Size = new System.Drawing.Size(133, 382);
+            this.CategoryPanel.Size = new System.Drawing.Size(133, 496);
             this.CategoryPanel.TabIndex = 1;
             this.CategoryPanel.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.CategoryPanel.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -400,9 +405,12 @@
             this.ProductsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.ProductsPanel.Controls.Add(this.ucProduct1);
+            this.ProductsPanel.Controls.Add(this.ucProduct2);
+            this.ProductsPanel.Controls.Add(this.ucProduct3);
             this.ProductsPanel.Location = new System.Drawing.Point(151, 177);
             this.ProductsPanel.Name = "ProductsPanel";
-            this.ProductsPanel.Size = new System.Drawing.Size(488, 382);
+            this.ProductsPanel.Size = new System.Drawing.Size(613, 496);
             this.ProductsPanel.TabIndex = 2;
             // 
             // guna2DataGridView1
@@ -437,12 +445,12 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(645, 177);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(770, 177);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowHeadersWidth = 51;
             this.guna2DataGridView1.RowTemplate.Height = 24;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(455, 382);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(371, 496);
             this.guna2DataGridView1.TabIndex = 7;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -486,6 +494,7 @@
             // 
             this.dgvName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dgvName.HeaderText = "Name";
+            this.dgvName.MinimumWidth = 6;
             this.dgvName.Name = "dgvName";
             // 
             // dgvQty
@@ -513,10 +522,49 @@
             this.dgvAmount.MinimumWidth = 60;
             this.dgvAmount.Name = "dgvAmount";
             // 
+            // ucProduct1
+            // 
+            this.ucProduct1.id = 0;
+            this.ucProduct1.Location = new System.Drawing.Point(3, 19);
+            this.ucProduct1.Margin = new System.Windows.Forms.Padding(3, 19, 3, 19);
+            this.ucProduct1.Name = "ucProduct1";
+            this.ucProduct1.pCategory = null;
+            this.ucProduct1.pImage = ((System.Drawing.Image)(resources.GetObject("ucProduct1.pImage")));
+            this.ucProduct1.pName = "Product Name";
+            this.ucProduct1.pPrice = null;
+            this.ucProduct1.Size = new System.Drawing.Size(248, 306);
+            this.ucProduct1.TabIndex = 1;
+            // 
+            // ucProduct2
+            // 
+            this.ucProduct2.id = 0;
+            this.ucProduct2.Location = new System.Drawing.Point(257, 13);
+            this.ucProduct2.Margin = new System.Windows.Forms.Padding(3, 13, 3, 13);
+            this.ucProduct2.Name = "ucProduct2";
+            this.ucProduct2.pCategory = null;
+            this.ucProduct2.pImage = ((System.Drawing.Image)(resources.GetObject("ucProduct2.pImage")));
+            this.ucProduct2.pName = "Product Name";
+            this.ucProduct2.pPrice = null;
+            this.ucProduct2.Size = new System.Drawing.Size(219, 296);
+            this.ucProduct2.TabIndex = 1;
+            // 
+            // ucProduct3
+            // 
+            this.ucProduct3.id = 0;
+            this.ucProduct3.Location = new System.Drawing.Point(3, 371);
+            this.ucProduct3.Margin = new System.Windows.Forms.Padding(3, 27, 3, 27);
+            this.ucProduct3.Name = "ucProduct3";
+            this.ucProduct3.pCategory = null;
+            this.ucProduct3.pImage = ((System.Drawing.Image)(resources.GetObject("ucProduct3.pImage")));
+            this.ucProduct3.pName = "Product Name";
+            this.ucProduct3.pPrice = null;
+            this.ucProduct3.Size = new System.Drawing.Size(281, 289);
+            this.ucProduct3.TabIndex = 1;
+            // 
             // formPOS
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1100, 673);
+            this.ClientSize = new System.Drawing.Size(1141, 787);
             this.Controls.Add(this.guna2DataGridView1);
             this.Controls.Add(this.ProductsPanel);
             this.Controls.Add(this.CategoryPanel);
@@ -534,6 +582,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryPanel)).EndInit();
+            this.ProductsPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -565,5 +614,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvAmount;
+        private ucProduct ucProduct2;
+        private ucProduct ucProduct1;
+        private ucProduct ucProduct3;
     }
 }
