@@ -59,8 +59,7 @@
             this.dgvQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ucProduct1 = new RestarurantManagement.Model.ucProduct();
-            this.ucProduct2 = new RestarurantManagement.Model.ucProduct();
+            this.txtboxSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.ucProduct3 = new RestarurantManagement.Model.ucProduct();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
@@ -405,12 +404,10 @@
             this.ProductsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ProductsPanel.Controls.Add(this.ucProduct1);
-            this.ProductsPanel.Controls.Add(this.ucProduct2);
             this.ProductsPanel.Controls.Add(this.ucProduct3);
-            this.ProductsPanel.Location = new System.Drawing.Point(181, 177);
+            this.ProductsPanel.Location = new System.Drawing.Point(138, 177);
             this.ProductsPanel.Name = "ProductsPanel";
-            this.ProductsPanel.Size = new System.Drawing.Size(583, 496);
+            this.ProductsPanel.Size = new System.Drawing.Size(626, 496);
             this.ProductsPanel.TabIndex = 2;
             // 
             // guna2DataGridView1
@@ -522,49 +519,47 @@
             this.dgvAmount.MinimumWidth = 60;
             this.dgvAmount.Name = "dgvAmount";
             // 
-            // ucProduct1
+            // txtboxSearch
             // 
-            this.ucProduct1.id = 0;
-            this.ucProduct1.Location = new System.Drawing.Point(7, 60);
-            this.ucProduct1.Margin = new System.Windows.Forms.Padding(7, 60, 7, 60);
-            this.ucProduct1.Name = "ucProduct1";
-            this.ucProduct1.pCategory = null;
-            this.ucProduct1.pImage = ((System.Drawing.Image)(resources.GetObject("ucProduct1.pImage")));
-            this.ucProduct1.pName = "Product Name";
-            this.ucProduct1.pPrice = null;
-            this.ucProduct1.Size = new System.Drawing.Size(588, 954);
-            this.ucProduct1.TabIndex = 1;
-            // 
-            // ucProduct2
-            // 
-            this.ucProduct2.id = 0;
-            this.ucProduct2.Location = new System.Drawing.Point(7, 1115);
-            this.ucProduct2.Margin = new System.Windows.Forms.Padding(7, 41, 7, 41);
-            this.ucProduct2.Name = "ucProduct2";
-            this.ucProduct2.pCategory = null;
-            this.ucProduct2.pImage = ((System.Drawing.Image)(resources.GetObject("ucProduct2.pImage")));
-            this.ucProduct2.pName = "Product Name";
-            this.ucProduct2.pPrice = null;
-            this.ucProduct2.Size = new System.Drawing.Size(519, 925);
-            this.ucProduct2.TabIndex = 1;
+            this.txtboxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtboxSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtboxSearch.DefaultText = "";
+            this.txtboxSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtboxSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtboxSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtboxSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtboxSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtboxSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtboxSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtboxSearch.IconLeft = global::RestarurantManagement.Properties.Resources.search;
+            this.txtboxSearch.Location = new System.Drawing.Point(153, 122);
+            this.txtboxSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtboxSearch.Name = "txtboxSearch";
+            this.txtboxSearch.PasswordChar = '\0';
+            this.txtboxSearch.PlaceholderText = "Search Here";
+            this.txtboxSearch.SelectedText = "";
+            this.txtboxSearch.Size = new System.Drawing.Size(502, 48);
+            this.txtboxSearch.TabIndex = 8;
+            this.txtboxSearch.TextChanged += new System.EventHandler(this.txtboxSearch_TextChanged);
             // 
             // ucProduct3
             // 
             this.ucProduct3.id = 0;
-            this.ucProduct3.Location = new System.Drawing.Point(7, 2164);
-            this.ucProduct3.Margin = new System.Windows.Forms.Padding(7, 83, 7, 83);
+            this.ucProduct3.Location = new System.Drawing.Point(155, 5400);
+            this.ucProduct3.Margin = new System.Windows.Forms.Padding(155, 5400, 155, 5400);
             this.ucProduct3.Name = "ucProduct3";
             this.ucProduct3.pCategory = null;
             this.ucProduct3.pImage = ((System.Drawing.Image)(resources.GetObject("ucProduct3.pImage")));
             this.ucProduct3.pName = "Product Name";
             this.ucProduct3.pPrice = null;
-            this.ucProduct3.Size = new System.Drawing.Size(667, 902);
+            this.ucProduct3.Size = new System.Drawing.Size(15780, 58606);
             this.ucProduct3.TabIndex = 1;
             // 
             // formPOS
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1141, 787);
+            this.Controls.Add(this.txtboxSearch);
             this.Controls.Add(this.guna2DataGridView1);
             this.Controls.Add(this.ProductsPanel);
             this.Controls.Add(this.CategoryPanel);
@@ -614,8 +609,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvAmount;
-        private ucProduct ucProduct2;
-        private ucProduct ucProduct1;
         private ucProduct ucProduct3;
+        public Guna.UI2.WinForms.Guna2TextBox txtboxSearch;
     }
 }
