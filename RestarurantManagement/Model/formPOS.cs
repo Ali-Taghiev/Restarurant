@@ -104,17 +104,21 @@ namespace RestarurantManagement.Model
 
                     if (Convert.ToInt32(item.Cells["dgvid"].Value) == wdg.id)
                     {
-                        item.Cells["dgvQty"].Value = int.Parse(item.Cells["dgvQty"].ToString() + 1);
+                        item.Cells["dgvQty"].Value = int.Parse(item.Cells["dgvQty"].Value.ToString() + 1);
 
                         item.Cells["dgvAmount"].Value = 
-                        int.Parse(item.Cells["dgvQty"].ToString()) *
-                            double.Parse(item.Cells["dgvPrice"].ToString());
+                        int.Parse(item.Cells["dgvQty"].Value.ToString()) *
+                            double.Parse(item.Cells["dgvPrice"].Value.ToString());
+
+                        return;
                     }
 
-                    //This line add new product
-
-                    guna2DataGridView1.Rows.Add(new object[] {0,wdg.id,wdg.pName,1,wdg.pPrice,wdg.pPrice});
+                   
                 }
+                //This line add new product
+
+                guna2DataGridView1.Rows.Add(new object[] { 0, wdg.id, wdg.pName, 1, wdg.pPrice, wdg.pPrice });
+
             };
 
         }

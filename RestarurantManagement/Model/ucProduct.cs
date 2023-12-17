@@ -15,7 +15,16 @@ namespace RestarurantManagement.Model
         public ucProduct()
         {
             InitializeComponent();
+
+            // Attach the Click event handler for the entire control
+            this.Click += ucProduct_Click;
+
+            // Attach the Click event handler for each child control
+            lblName.Click += ucProduct_Click;
+            txtImage.Click += ucProduct_Click;
+            // Add other controls as needed
         }
+
         public event EventHandler onSelect = null;
         public int id { get; set; }
         public string pPrice { get; set; }
@@ -31,9 +40,11 @@ namespace RestarurantManagement.Model
             set { txtImage.Image = value; }
         }
 
-        private void txtImage_Click(object sender, EventArgs e)
+        private void ucProduct_Click(object sender, EventArgs e)
         {
-            onSelect?.Invoke(this, e);
+            // Raise the onSelect event when any part of the ucProduct is clicked
+            onSelect?.Invoke(this, EventArgs.Empty);
         }
     }
 }
+
