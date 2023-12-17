@@ -280,7 +280,7 @@
             this.lblWaiter.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblWaiter.Location = new System.Drawing.Point(866, 62);
             this.lblWaiter.Name = "lblWaiter";
-            this.lblWaiter.Size = new System.Drawing.Size(94, 37);
+            this.lblWaiter.Size = new System.Drawing.Size(76, 30);
             this.lblWaiter.TabIndex = 1;
             this.lblWaiter.Text = "Waiter";
             // 
@@ -292,7 +292,7 @@
             this.lblTable.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblTable.Location = new System.Drawing.Point(866, 19);
             this.lblTable.Name = "lblTable";
-            this.lblTable.Size = new System.Drawing.Size(79, 37);
+            this.lblTable.Size = new System.Drawing.Size(64, 30);
             this.lblTable.TabIndex = 1;
             this.lblTable.Text = "Table";
             this.lblTable.Visible = false;
@@ -305,7 +305,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(133, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 37);
+            this.label1.Size = new System.Drawing.Size(54, 30);
             this.label1.TabIndex = 1;
             this.label1.Text = "POS";
             // 
@@ -376,7 +376,7 @@
             this.CategoryPanel.RowHeadersVisible = false;
             this.CategoryPanel.RowHeadersWidth = 51;
             this.CategoryPanel.RowTemplate.Height = 24;
-            this.CategoryPanel.Size = new System.Drawing.Size(133, 496);
+            this.CategoryPanel.Size = new System.Drawing.Size(123, 496);
             this.CategoryPanel.TabIndex = 1;
             this.CategoryPanel.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.CategoryPanel.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -408,9 +408,9 @@
             this.ProductsPanel.Controls.Add(this.ucProduct1);
             this.ProductsPanel.Controls.Add(this.ucProduct2);
             this.ProductsPanel.Controls.Add(this.ucProduct3);
-            this.ProductsPanel.Location = new System.Drawing.Point(151, 177);
+            this.ProductsPanel.Location = new System.Drawing.Point(181, 177);
             this.ProductsPanel.Name = "ProductsPanel";
-            this.ProductsPanel.Size = new System.Drawing.Size(613, 496);
+            this.ProductsPanel.Size = new System.Drawing.Size(583, 496);
             this.ProductsPanel.TabIndex = 2;
             // 
             // guna2DataGridView1
@@ -525,40 +525,40 @@
             // ucProduct1
             // 
             this.ucProduct1.id = 0;
-            this.ucProduct1.Location = new System.Drawing.Point(3, 19);
-            this.ucProduct1.Margin = new System.Windows.Forms.Padding(3, 19, 3, 19);
+            this.ucProduct1.Location = new System.Drawing.Point(7, 60);
+            this.ucProduct1.Margin = new System.Windows.Forms.Padding(7, 60, 7, 60);
             this.ucProduct1.Name = "ucProduct1";
             this.ucProduct1.pCategory = null;
             this.ucProduct1.pImage = ((System.Drawing.Image)(resources.GetObject("ucProduct1.pImage")));
             this.ucProduct1.pName = "Product Name";
             this.ucProduct1.pPrice = null;
-            this.ucProduct1.Size = new System.Drawing.Size(248, 306);
+            this.ucProduct1.Size = new System.Drawing.Size(588, 954);
             this.ucProduct1.TabIndex = 1;
             // 
             // ucProduct2
             // 
             this.ucProduct2.id = 0;
-            this.ucProduct2.Location = new System.Drawing.Point(257, 13);
-            this.ucProduct2.Margin = new System.Windows.Forms.Padding(3, 13, 3, 13);
+            this.ucProduct2.Location = new System.Drawing.Point(7, 1115);
+            this.ucProduct2.Margin = new System.Windows.Forms.Padding(7, 41, 7, 41);
             this.ucProduct2.Name = "ucProduct2";
             this.ucProduct2.pCategory = null;
             this.ucProduct2.pImage = ((System.Drawing.Image)(resources.GetObject("ucProduct2.pImage")));
             this.ucProduct2.pName = "Product Name";
             this.ucProduct2.pPrice = null;
-            this.ucProduct2.Size = new System.Drawing.Size(219, 296);
+            this.ucProduct2.Size = new System.Drawing.Size(519, 925);
             this.ucProduct2.TabIndex = 1;
             // 
             // ucProduct3
             // 
             this.ucProduct3.id = 0;
-            this.ucProduct3.Location = new System.Drawing.Point(3, 371);
-            this.ucProduct3.Margin = new System.Windows.Forms.Padding(3, 27, 3, 27);
+            this.ucProduct3.Location = new System.Drawing.Point(7, 2164);
+            this.ucProduct3.Margin = new System.Windows.Forms.Padding(7, 83, 7, 83);
             this.ucProduct3.Name = "ucProduct3";
             this.ucProduct3.pCategory = null;
             this.ucProduct3.pImage = ((System.Drawing.Image)(resources.GetObject("ucProduct3.pImage")));
             this.ucProduct3.pName = "Product Name";
             this.ucProduct3.pPrice = null;
-            this.ucProduct3.Size = new System.Drawing.Size(281, 289);
+            this.ucProduct3.Size = new System.Drawing.Size(667, 902);
             this.ucProduct3.TabIndex = 1;
             // 
             // formPOS
