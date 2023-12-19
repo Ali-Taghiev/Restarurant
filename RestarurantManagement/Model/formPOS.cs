@@ -82,9 +82,10 @@ namespace RestarurantManagement.Model
 
         }
 
-        private void AddItems(int id,string name ,string cat ,string price,Image pImage)
+        private void AddItems(int id, string name, string cat, string price, Image pImage)
         {
-            var w = new ucProduct()
+            // Create a new ucProduct control with the provided information
+            var productControl = new ucProduct()
             {
                 pName = name,
                 pCategory = cat,
@@ -92,40 +93,43 @@ namespace RestarurantManagement.Model
                 pImage = pImage,
                 id = Convert.ToInt32(id)
             };
-            ProductsPanel.Controls.Add(w);
-            w.onSelect += (ss, ee) =>
-            {
-                var wdg = (ucProduct)ss;
 
+            // Add the product control to the ProductsPanel
+            ProductsPanel.Controls.Add(productControl);
+
+            // Attach an event handler to the onSelect event of the product control
+            productControl.onSelect += (sender, eventArgs) =>
+            {
+                // Cast the sender to ucProduct to access its properties
+                var selectedProduct = (ucProduct)sender;
+
+                // Iterate through the rows in guna2DataGridView1
                 foreach (DataGridViewRow item in guna2DataGridView1.Rows)
                 {
-                    // Check if the current product in guna2DataGridView1 is the same as the selected product (wdg)
-                    // If true, increment the quantity and update the total amount
-
-                    if (Convert.ToInt32(item.Cells["dgvid"].Value) == wdg.id)
+                    // Check if the product is already in the DataGridView
+                    if (Convert.ToInt32(item.Cells["dgvid"].Value) == selectedProduct.id)
                     {
-                        item.Cells["dgvQty"].Value = int.Parse(item.Cells["dgvQty"].Value.ToString() + 1);
+                        // Increment the quantity of the existing product
+                        item.Cells["dgvQty"].Value = int.Parse(item.Cells["dgvQty"].Value.ToString()) + 1;
 
+                        // Update the total amount for the existing product
                         item.Cells["dgvAmount"].Value = 
-                        int.Parse(item.Cells["dgvQty"].Value.ToString()) *
-                            double.Parse(item.Cells["dgvPrice"].Value.ToString());
+                        Convert.ToString(int.Parse(item.Cells["dgvQty"].Value.ToString()) *
+                         double.Parse(item.Cells["dgvPrice"].Value.ToString()));
 
-                        return;
+                        return; // Exit the method if the product is found in the DataGridView
                     }
-
-                   
                 }
-                //This line add new product
 
-                guna2DataGridView1.Rows.Add(new object[] { 0, wdg.id, wdg.pName, 1, wdg.pPrice, wdg.pPrice });
-
+                // If the product is not in the DataGridView, add a new row for the product
+                guna2DataGridView1.Rows.Add(new object[] { 0, selectedProduct.id, selectedProduct.pName, 1, selectedProduct.pPrice, selectedProduct.pPrice });
             };
-
         }
+
 
         private void LoadProducts()
         {
-            string query = "select * from products  inner join category  on catID = CategoryID";
+            string query = "select * from products inner join category on catID = CategoryID";
 
             SqlCommand cmd = new SqlCommand(query, MainClass.con);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -134,23 +138,31 @@ namespace RestarurantManagement.Model
 
             foreach (DataRow item in dt.Rows)
             {
-                Byte[] imageArray = (byte[])item["pImage"];
-                byte[] imagebytearray = imageArray;
+                // Retrieve image data from the database
+                byte[] imageArray = (byte[])item["pImage"];
 
+                // Convert the byte array to an Image
+                Image productImage = Image.FromStream(new MemoryStream(imageArray));
+
+                // Call the AddItems method to add the product to the ProductsPanel
                 AddItems(Convert.ToInt32(item["productId"].ToString()), item["pName"].ToString(), item["catName"].ToString(),
-                    item["pPrice"].ToString(),Image.FromStream(new MemoryStream(imageArray)));
+                         item["pPrice"].ToString(), productImage);
             }
-
         }
+
 
         private void txtboxSearch_TextChanged(object sender, EventArgs e)
         {
+            // Iterate through each control in ProductsPanel
             foreach (var item in ProductsPanel.Controls)
             {
+                // Cast the control to ucProduct
+                var productControl = (ucProduct)item;
 
-                var p = (ucProduct)item;
-                p.Visible = p.pName.ToLower().Contains(txtboxSearch.Text.Trim().ToLower());
+                // Set visibility based on whether the product name contains the search text
+                productControl.Visible = productControl.pName.ToLower().Contains(txtboxSearch.Text.Trim().ToLower());
             }
         }
+
     }
 }
