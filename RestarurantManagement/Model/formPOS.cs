@@ -71,6 +71,9 @@ namespace RestarurantManagement.Model
                     // Increment yPos for the next button
                     yPos += buttonHeight + spacing;
 
+
+                    //Event for clicking ,When we click particular category it shows its products
+                    btn.Click += new EventHandler(btn_Click);
                     
                 }
 
@@ -81,6 +84,20 @@ namespace RestarurantManagement.Model
             }
 
         }
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+            Guna.UI2.WinForms.Guna2Button btn = (Guna.UI2.WinForms.Guna2Button)sender;
+
+            foreach (var item in ProductsPanel.Controls)
+            {
+
+                var productControl = (ucProduct)item;
+
+                productControl.Visible = productControl.pCategory.ToLower().Contains(btn.Text.ToLower());
+            }
+        }
+       
 
         private void AddItems(int id, string name, string cat, string price, Image pImage)
         {
@@ -123,6 +140,8 @@ namespace RestarurantManagement.Model
 
                 // If the product is not in the DataGridView, add a new row for the product
                 guna2DataGridView1.Rows.Add(new object[] { 0, selectedProduct.id, selectedProduct.pName, 1, selectedProduct.pPrice, selectedProduct.pPrice });
+
+                GetTotalAmount();
             };
         }
 
@@ -162,6 +181,39 @@ namespace RestarurantManagement.Model
                 // Set visibility based on whether the product name contains the search text
                 productControl.Visible = productControl.pName.ToLower().Contains(txtboxSearch.Text.Trim().ToLower());
             }
+        }
+
+        private void guna2DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            //For Serial No in DataGridView
+
+            
+            int count = 0;
+
+            foreach (DataGridViewRow row in guna2DataGridView1.Rows)
+            {
+                count++;
+                row.Cells[0].Value = count;
+            }
+        }
+
+        private void GetTotalAmount()
+        {
+            double total = 0;
+
+            lblTotal.Text = "";
+
+            foreach (DataGridViewRow item in guna2DataGridView1.Rows)
+            {
+                object cellValue = item.Cells["dgvAmount"].Value;
+
+                if (cellValue != null)
+                {
+                    total += double.Parse(cellValue.ToString());
+                }
+            }
+
+            lblTotal.Text = total.ToString("N2");
         }
 
     }

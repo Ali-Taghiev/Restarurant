@@ -31,10 +31,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formPOS));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formPOS));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnDinIn = new Guna.UI2.WinForms.Guna2Button();
             this.btnTakeAway = new Guna.UI2.WinForms.Guna2Button();
@@ -52,6 +52,7 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.CategoryPanel = new Guna.UI2.WinForms.Guna2DataGridView();
             this.ProductsPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.ucProduct3 = new RestarurantManagement.Model.ucProduct();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.dgvSno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvid = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,10 +61,12 @@
             this.dgvPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtboxSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.ucProduct3 = new RestarurantManagement.Model.ucProduct();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryPanel)).BeginInit();
             this.ProductsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
@@ -338,6 +341,8 @@
             // 
             // guna2Panel2
             // 
+            this.guna2Panel2.Controls.Add(this.lblTotal);
+            this.guna2Panel2.Controls.Add(this.label2);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
             this.guna2Panel2.Location = new System.Drawing.Point(0, 679);
@@ -410,6 +415,19 @@
             this.ProductsPanel.Size = new System.Drawing.Size(626, 496);
             this.ProductsPanel.TabIndex = 2;
             // 
+            // ucProduct3
+            // 
+            this.ucProduct3.id = 0;
+            this.ucProduct3.Location = new System.Drawing.Point(155, 5400);
+            this.ucProduct3.Margin = new System.Windows.Forms.Padding(155, 5400, 155, 5400);
+            this.ucProduct3.Name = "ucProduct3";
+            this.ucProduct3.pCategory = null;
+            this.ucProduct3.pImage = ((System.Drawing.Image)(resources.GetObject("ucProduct3.pImage")));
+            this.ucProduct3.pName = "Product Name";
+            this.ucProduct3.pPrice = null;
+            this.ucProduct3.Size = new System.Drawing.Size(15780, 58606);
+            this.ucProduct3.TabIndex = 1;
+            // 
             // guna2DataGridView1
             // 
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
@@ -470,6 +488,7 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 24;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.guna2DataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.guna2DataGridView1_CellFormatting);
             // 
             // dgvSno
             // 
@@ -542,18 +561,30 @@
             this.txtboxSearch.TabIndex = 8;
             this.txtboxSearch.TextChanged += new System.EventHandler(this.txtboxSearch_TextChanged);
             // 
-            // ucProduct3
+            // label2
             // 
-            this.ucProduct3.id = 0;
-            this.ucProduct3.Location = new System.Drawing.Point(155, 5400);
-            this.ucProduct3.Margin = new System.Windows.Forms.Padding(155, 5400, 155, 5400);
-            this.ucProduct3.Name = "ucProduct3";
-            this.ucProduct3.pCategory = null;
-            this.ucProduct3.pImage = ((System.Drawing.Image)(resources.GetObject("ucProduct3.pImage")));
-            this.ucProduct3.pName = "Product Name";
-            this.ucProduct3.pPrice = null;
-            this.ucProduct3.Size = new System.Drawing.Size(15780, 58606);
-            this.ucProduct3.TabIndex = 1;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(850, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 30);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Total:";
+            
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.lblTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTotal.Location = new System.Drawing.Point(907, 39);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(54, 30);
+            this.lblTotal.TabIndex = 3;
+            this.lblTotal.Text = "0.00";
             // 
             // formPOS
             // 
@@ -576,6 +607,8 @@
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.guna2Panel2.ResumeLayout(false);
+            this.guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryPanel)).EndInit();
             this.ProductsPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
@@ -611,5 +644,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvAmount;
         private ucProduct ucProduct3;
         public Guna.UI2.WinForms.Guna2TextBox txtboxSearch;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label label2;
     }
 }
