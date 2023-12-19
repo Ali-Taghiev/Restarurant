@@ -83,7 +83,7 @@ namespace RestarurantManagement.Model
             Hashtable ht = new Hashtable();
             ht.Add("@id", id);
             ht.Add("@Name", txtName.Text);
-            ht.Add("@Price", txtboxPrice.Text);
+            ht.Add("@Price", txtPrice.Text);
             ht.Add("@Cat", Convert.ToInt32(cmboxCategory.SelectedValue));
             ht.Add("@Image", imageByteArr);
             if (MainClass.SQL(query, ht) > 0)
