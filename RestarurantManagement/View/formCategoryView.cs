@@ -33,7 +33,7 @@ namespace RestarurantManagement.View
             //form.ShowDialog();
 
             //Added Blur background effect 
-            MainClass.BlurBackgorund(new formCategoryAdd());
+            MainClass.BlurBackground(new formCategoryAdd());
             GetData();
 
         }
@@ -58,7 +58,7 @@ namespace RestarurantManagement.View
                 formCategoryAdd form = new formCategoryAdd();
                 form.id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
                 form.txtName.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvName"].Value);
-                MainClass.BlurBackgorund(form);
+                MainClass.BlurBackground(form);
                 GetData();
             }
 

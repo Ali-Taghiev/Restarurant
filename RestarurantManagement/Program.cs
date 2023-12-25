@@ -17,7 +17,7 @@ namespace RestarurantManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formPOS());
+            Application.Run(new formMain());
         }
     }
 }

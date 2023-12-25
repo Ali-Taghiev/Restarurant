@@ -47,7 +47,7 @@
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(160, 32);
+            this.label1.Size = new System.Drawing.Size(127, 25);
             this.label1.Text = "Category Add";
             // 
             // txtName
@@ -76,17 +76,17 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.Location = new System.Drawing.Point(33, 151);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 28);
+            this.label2.Size = new System.Drawing.Size(52, 21);
             this.label2.TabIndex = 1;
             this.label2.Text = "Name";
             // 
             // formCategoryAdd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(434, 390);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtName);
+            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "formCategoryAdd";
             this.Text = "formCategoryAdd";

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
@@ -46,18 +46,6 @@
             this.guna2Panel2.Size = new System.Drawing.Size(800, 100);
             this.guna2Panel2.TabIndex = 1;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(103, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Select Table";
-            // 
             // guna2ImageButton1
             // 
             this.guna2ImageButton1.BackColor = System.Drawing.Color.Transparent;
@@ -72,6 +60,18 @@
             this.guna2ImageButton1.Size = new System.Drawing.Size(85, 69);
             this.guna2ImageButton1.TabIndex = 2;
             this.guna2ImageButton1.UseTransparentBackground = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(103, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 25);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Select Table";
             // 
             // flowLayoutPanel1
             // 

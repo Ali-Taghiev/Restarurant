@@ -37,11 +37,11 @@ namespace RestarurantManagement.Model
 
         private void AddCategory()
         {
-           
-            
+
+
 
             string query = "select * from category";
-            SqlCommand cmd  = new SqlCommand(query,MainClass.con);
+            SqlCommand cmd = new SqlCommand(query, MainClass.con);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
@@ -50,12 +50,12 @@ namespace RestarurantManagement.Model
             CategoryPanel.Controls.Clear();
 
 
-            if(dt.Rows.Count > 0)
+            if (dt.Rows.Count > 0)
             {
 
                 int buttonHeight = 40;
                 int spacing = 5;
-                int yPos = 0;
+                int yPos = 45;
 
                 foreach (DataRow row in dt.Rows)
                 {
@@ -76,7 +76,7 @@ namespace RestarurantManagement.Model
 
                     //Event for clicking ,When we click particular category it shows its products
                     btn.Click += new EventHandler(btn_Click);
-                    
+
                 }
 
 
@@ -91,6 +91,12 @@ namespace RestarurantManagement.Model
         {
             Guna.UI2.WinForms.Guna2Button btn = (Guna.UI2.WinForms.Guna2Button)sender;
 
+            if(btn.Text=="All Categories")
+            {
+                txtboxSearch.Text = "1";
+                txtboxSearch.Text = "";
+                return;
+            }
             foreach (var item in ProductsPanel.Controls)
             {
 
@@ -99,13 +105,14 @@ namespace RestarurantManagement.Model
                 productControl.Visible = productControl.pCategory.ToLower().Contains(btn.Text.ToLower());
             }
         }
-       
 
-        private void AddItems(int id, string name, string cat, string price, Image pImage)
+
+        private void AddItems(int id, string proID, string name, string cat, string price, Image pImage)
         {
             // Create a new ucProduct control with the provided information
             var productControl = new ucProduct()
             {
+
                 pName = name,
                 pCategory = cat,
                 pPrice = price,
@@ -132,7 +139,7 @@ namespace RestarurantManagement.Model
                         item.Cells["dgvQty"].Value = int.Parse(item.Cells["dgvQty"].Value.ToString()) + 1;
 
                         // Update the total amount for the existing product
-                        item.Cells["dgvAmount"].Value = 
+                        item.Cells["dgvAmount"].Value =
                         Convert.ToString(int.Parse(item.Cells["dgvQty"].Value.ToString()) *
                          double.Parse(item.Cells["dgvPrice"].Value.ToString()));
 
@@ -141,7 +148,7 @@ namespace RestarurantManagement.Model
                 }
 
                 // If the product is not in the DataGridView, add a new row for the product
-                guna2DataGridView1.Rows.Add(new object[] { 0, selectedProduct.id, selectedProduct.pName, 1, selectedProduct.pPrice, selectedProduct.pPrice });
+                guna2DataGridView1.Rows.Add(new object[] { 0, 0, selectedProduct.id, selectedProduct.pName, 1, selectedProduct.pPrice, selectedProduct.pPrice });
 
                 GetTotalAmount();
             };
@@ -166,7 +173,7 @@ namespace RestarurantManagement.Model
                 Image productImage = Image.FromStream(new MemoryStream(imageArray));
 
                 // Call the AddItems method to add the product to the ProductsPanel
-                AddItems(Convert.ToInt32(item["productId"].ToString()), item["pName"].ToString(), item["catName"].ToString(),
+                AddItems(0, item["productId"].ToString(), item["pName"].ToString(), item["catName"].ToString(),
                          item["pPrice"].ToString(), productImage);
             }
         }
@@ -189,7 +196,7 @@ namespace RestarurantManagement.Model
         {
             //For Serial No in DataGridView
 
-            
+
             int count = 0;
 
             foreach (DataGridViewRow row in guna2DataGridView1.Rows)
@@ -251,12 +258,12 @@ namespace RestarurantManagement.Model
         {
             formTableSelection form = new formTableSelection();
 
-            MainClass.BlurBackgorund(form);
+            MainClass.BlurBackground(form);
 
             if (form.TableName != "")
             {
                 lblTable.Text = "Table: " + form.TableName;
-                lblTable.Visible=true;
+                lblTable.Visible = true;
             }
             else
             {
@@ -265,11 +272,11 @@ namespace RestarurantManagement.Model
             }
             formWaiterSelection form2 = new formWaiterSelection();
 
-            MainClass.BlurBackgorund(form2);
+            MainClass.BlurBackground(form2);
 
             if (form2.WaiterName != "")
             {
-                lblWaiter.Text =  "Waiter: "+form2.WaiterName;
+                lblWaiter.Text = "Waiter: " + form2.WaiterName;
                 lblWaiter.Visible = true;
             }
             else
@@ -277,6 +284,11 @@ namespace RestarurantManagement.Model
                 lblWaiter.Text = "";
                 lblTable.Visible = false;
             }
+        }
+
+        private void btnKOT_Click(object sender, EventArgs e)
+        {
+            //Save Data in database
         }
     }
 }

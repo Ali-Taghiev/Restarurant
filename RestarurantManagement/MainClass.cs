@@ -124,7 +124,7 @@ namespace RestarurantManagement
         }
 
         //Blur background when other form opened
-        public static void BlurBackgorund(Form Model)
+        public static void BlurBackground(Form Model)
         {
             Form Background = new Form();
             using (Model)
@@ -143,6 +143,7 @@ namespace RestarurantManagement
                 Background.Dispose();
             }
         }
+
 
         //Fill ComboBoxes
 
