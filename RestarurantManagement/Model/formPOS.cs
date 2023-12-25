@@ -14,6 +14,8 @@ namespace RestarurantManagement.Model
 {
     public partial class formPOS : Form
     {
+        public int MainId = 0;
+        public string OrderType;
         public formPOS()
         {
             InitializeComponent();
@@ -216,5 +218,65 @@ namespace RestarurantManagement.Model
             lblTotal.Text = total.ToString("N2");
         }
 
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            lblTable.Text = "";
+            lblWaiter.Text = "";
+            lblTotal.Text = "0.00";
+            lblTable.Visible = false;
+            lblWaiter.Visible = false;
+            guna2DataGridView1.Rows.Clear();
+            MainId = 0;
+        }
+
+        private void btnDelivery_Click(object sender, EventArgs e)
+        {
+            lblTable.Text = "";
+            lblWaiter.Text = "";
+            lblTable.Visible = false;
+            lblWaiter.Visible = false;
+            OrderType = "Delivery";
+        }
+
+        private void btnTakeAway_Click(object sender, EventArgs e)
+        {
+            lblTable.Text = "";
+            lblWaiter.Text = "";
+            lblTable.Visible = false;
+            lblWaiter.Visible = false;
+            OrderType = "Take Away";
+        }
+
+        private void btnDinIn_Click(object sender, EventArgs e)
+        {
+            formTableSelection form = new formTableSelection();
+
+            MainClass.BlurBackgorund(form);
+
+            if (form.TableName != "")
+            {
+                lblTable.Text = "Table: " + form.TableName;
+                lblTable.Visible=true;
+            }
+            else
+            {
+                lblTable.Text = "";
+                lblTable.Visible = false;
+            }
+            formWaiterSelection form2 = new formWaiterSelection();
+
+            MainClass.BlurBackgorund(form2);
+
+            if (form2.WaiterName != "")
+            {
+                lblWaiter.Text =  "Waiter: "+form2.WaiterName;
+                lblWaiter.Visible = true;
+            }
+            else
+            {
+                lblWaiter.Text = "";
+                lblTable.Visible = false;
+            }
+        }
     }
 }
