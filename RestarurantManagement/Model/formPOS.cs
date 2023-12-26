@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -289,6 +290,78 @@ namespace RestarurantManagement.Model
         private void btnKOT_Click(object sender, EventArgs e)
         {
             //Save Data in database
+
+            string query1 = ""; //Main Table
+            string query2 = ""; //Detail Table
+
+            int detailId = 0;
+
+            if(MainId == 0)//Insert
+            {
+                query1 = "Insert into tblMain Values (@aDate,@aTime,@TableName,@WaiterName,@status,@orderType,@total,@received,@change) ;" +
+                    "Select SCOPE_IDENTITY()";
+                //this line will get recent add id value
+            }
+            else //Update
+            {
+                query1 = "Update tblMain Set status=@status,total=@total,received=@received,change=@change where MainId=@ID";
+
+            }
+
+           
+            
+            SqlCommand cmd = new SqlCommand(query1,MainClass.con);
+
+            cmd.Parameters.AddWithValue("@ID", MainId);
+            cmd.Parameters.AddWithValue("@aDate", DateTime.Now.Date);
+            cmd.Parameters.AddWithValue("@aTime", DateTime.Now.ToLongTimeString());
+            cmd.Parameters.AddWithValue("@TableName", lblTable.Text);
+            cmd.Parameters.AddWithValue("@WaiterName", lblWaiter.Text);
+            cmd.Parameters.AddWithValue("@status", "Pending");
+            cmd.Parameters.AddWithValue("@orderType", OrderType);
+            cmd.Parameters.AddWithValue("@total", Convert.ToDouble(lblTotal.Text)); //as we onyl saving data for kitvhen value will update when  payment received
+            cmd.Parameters.AddWithValue("@received", Convert.ToDouble(0));
+            cmd.Parameters.AddWithValue("@change", Convert.ToDouble(0));
+                
+            if(MainClass.con.State == ConnectionState.Closed) { MainClass.con.Open(); }
+
+            if (MainId == 0) { MainId=Convert.ToInt32(cmd.ExecuteScalar()); } else { cmd.ExecuteNonQuery(); }
+
+            if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
+
+
+            foreach (DataGridViewRow row  in guna2DataGridView1.Rows)
+            {
+                detailId = Convert.ToInt32(row.Cells["dgvid"].Value);
+                if (detailId == 0)
+                {
+                    query2 = "Insert into tblDetails Values @MainId,@proID,@qty,@price,@amount";
+                }
+                else
+                {
+                    query2 = "Update tblDetails Set proID=@proID,qty=@qty,price=@price,amount=@amount where DetailID=@ID";
+                }
+
+                SqlCommand cmd2 = new SqlCommand(query2, MainClass.con);
+                cmd.Parameters.AddWithValue("@ID", detailId);
+                cmd.Parameters.AddWithValue("@MainID", MainId);
+                cmd.Parameters.AddWithValue("@proID", row.Cells["dgvproID"]);
+                cmd.Parameters.AddWithValue("@qty", row.Cells["dgvQty"]);
+                cmd.Parameters.AddWithValue("@price", row.Cells["dgvPrice"]);
+                cmd.Parameters.AddWithValue("@amount", row.Cells["dgvAmount"]);
+
+
+                if (MainClass.con.State == ConnectionState.Closed) { MainClass.con.Open(); }
+
+                 cmd2.ExecuteNonQuery(); 
+
+                if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
+
+
+            }
+
+
+
         }
     }
 }
