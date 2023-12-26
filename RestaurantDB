@@ -48,6 +48,7 @@ aTime Varchar(15),
 TableName varchar(10),
 WaiterName varchar(10),
 status varchar(15),
+orderType varchar(15),
 total float,received float,
 change float
 )
