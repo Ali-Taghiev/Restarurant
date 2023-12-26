@@ -118,7 +118,7 @@ namespace RestarurantManagement.Model
                 pCategory = cat,
                 pPrice = price,
                 pImage = pImage,
-                id = Convert.ToInt32(id)
+                id = Convert.ToInt32(proID)
             };
 
             // Add the product control to the ProductsPanel
@@ -134,7 +134,7 @@ namespace RestarurantManagement.Model
                 foreach (DataGridViewRow item in guna2DataGridView1.Rows)
                 {
                     // Check if the product is already in the DataGridView
-                    if (Convert.ToInt32(item.Cells["dgvid"].Value) == selectedProduct.id)
+                    if (Convert.ToInt32(item.Cells["dgvproID"].Value) == selectedProduct.id)
                     {
                         // Increment the quantity of the existing product
                         item.Cells["dgvQty"].Value = int.Parse(item.Cells["dgvQty"].Value.ToString()) + 1;
@@ -257,6 +257,7 @@ namespace RestarurantManagement.Model
 
         private void btnDinIn_Click(object sender, EventArgs e)
         {
+            OrderType = "Din In";
             formTableSelection form = new formTableSelection();
 
             MainClass.BlurBackground(form);
@@ -298,9 +299,8 @@ namespace RestarurantManagement.Model
 
             if(MainId == 0)//Insert
             {
-                query1 = "Insert into tblMain Values (@aDate,@aTime,@TableName,@WaiterName,@status,@orderType,@total,@received,@change) ;" +
-                    "Select SCOPE_IDENTITY()";
-                //this line will get recent add id value
+                query1 = "INSERT INTO tblMain (aDate, aTime, TableName, WaiterName, status, orderType, total, received, change) VALUES (@aDate, @aTime, @TableName, @WaiterName, @status, @orderType, @total, @received, @change); SELECT SCOPE_IDENTITY()";
+
             }
             else //Update
             {
@@ -313,8 +313,8 @@ namespace RestarurantManagement.Model
             SqlCommand cmd = new SqlCommand(query1,MainClass.con);
 
             cmd.Parameters.AddWithValue("@ID", MainId);
-            cmd.Parameters.AddWithValue("@aDate", DateTime.Now.Date);
-            cmd.Parameters.AddWithValue("@aTime", DateTime.Now.ToLongTimeString());
+            cmd.Parameters.AddWithValue("@aDate", Convert.ToDateTime(DateTime.Now.Date));
+            cmd.Parameters.AddWithValue("@aTime", DateTime.Now.ToShortTimeString());
             cmd.Parameters.AddWithValue("@TableName", lblTable.Text);
             cmd.Parameters.AddWithValue("@WaiterName", lblWaiter.Text);
             cmd.Parameters.AddWithValue("@status", "Pending");
@@ -335,7 +335,8 @@ namespace RestarurantManagement.Model
                 detailId = Convert.ToInt32(row.Cells["dgvid"].Value);
                 if (detailId == 0)
                 {
-                    query2 = "Insert into tblDetails Values @MainId,@proID,@qty,@price,@amount";
+                    query2 = "INSERT INTO tblDetails (MainId, proID, qty, price, amount) VALUES (@MainId, @proID, @qty, @price, @amount)";
+
                 }
                 else
                 {
@@ -343,12 +344,13 @@ namespace RestarurantManagement.Model
                 }
 
                 SqlCommand cmd2 = new SqlCommand(query2, MainClass.con);
-                cmd.Parameters.AddWithValue("@ID", detailId);
-                cmd.Parameters.AddWithValue("@MainID", MainId);
-                cmd.Parameters.AddWithValue("@proID", row.Cells["dgvproID"]);
-                cmd.Parameters.AddWithValue("@qty", row.Cells["dgvQty"]);
-                cmd.Parameters.AddWithValue("@price", row.Cells["dgvPrice"]);
-                cmd.Parameters.AddWithValue("@amount", row.Cells["dgvAmount"]);
+                cmd2.Parameters.AddWithValue("@ID", detailId);
+                cmd2.Parameters.AddWithValue("@MainID", MainId);
+                cmd2.Parameters.AddWithValue("@proID", Convert.ToInt32(row.Cells["dgvproID"].Value));
+                cmd2.Parameters.AddWithValue("@qty", Convert.ToInt32(row.Cells["dgvQty"].Value));
+                cmd2.Parameters.AddWithValue("@price", Convert.ToDouble(row.Cells["dgvPrice"].Value));
+                cmd2.Parameters.AddWithValue("@amount", Convert.ToDouble(row.Cells["dgvAmount"].Value));
+
 
 
                 if (MainClass.con.State == ConnectionState.Closed) { MainClass.con.Open(); }
@@ -357,10 +359,10 @@ namespace RestarurantManagement.Model
 
                 if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
 
-
+                
             }
 
-
+            guna2MessageDialog1.Show("Saved Succesfully..");
 
         }
     }
