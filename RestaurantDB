@@ -41,3 +41,21 @@ pPrice float,
 CategoryID int,
 pImage image
 )
+create table tblMain(
+MainID int Primary key identity,
+aDate date,
+aTime Varchar(15),
+TableName varchar(10),
+WaiterName varchar(10),
+status varchar(15),
+total float,received float,
+change float
+)
+create table tblDetails(
+DetailID int Primary key identity,
+MainID int ,
+proID int,
+qty int ,
+price float ,
+amount float
+)
