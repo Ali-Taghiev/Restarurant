@@ -374,5 +374,44 @@ namespace RestarurantManagement.Model
             detailId = 0;
 
         }
+        public int id = 0;
+        private void btnBill_Click(object sender, EventArgs e)
+        {
+            formBillList form = new formBillList();
+            MainClass.BlurBackground(form);
+
+            if (form.MainID > 0)
+            {
+                id = form.MainID;
+                LoadEntries();
+            }
+        }
+        private void LoadEntries()
+        {
+            string query = @"Select * from tblMain m inner join tblDetails d on m.MainID=d.MainID inner join products p on p.productId=d.proID where m.MainID= "+id+" ";
+            
+            SqlCommand cmd = new SqlCommand(query,MainClass.con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(dt);
+
+            guna2DataGridView1.Rows.Clear();
+            foreach (DataRow item in dt.Rows)
+            {
+
+                string detailid = item["DetailID"].ToString();
+                string proName = item["pName"].ToString();
+                string proid = item["proID"].ToString();
+                string qty = item["qty"].ToString();
+                string price = item["price"].ToString();
+                string amount = item["amount"].ToString();
+
+                object[] obj = { 0,detailid, proid,proName, qty, price, amount };
+                guna2DataGridView1.Rows.Add(obj);   
+
+            }
+            GetTotalAmount();
+                
+        }
     }
 }

@@ -41,7 +41,7 @@
             this.btnDelivery = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.btnKOT = new Guna.UI2.WinForms.Guna2Button();
-            this.btnBillList = new Guna.UI2.WinForms.Guna2Button();
+            this.btnBill = new Guna.UI2.WinForms.Guna2Button();
             this.btnHold = new Guna.UI2.WinForms.Guna2Button();
             this.btnNew = new Guna.UI2.WinForms.Guna2Button();
             this.lblWaiter = new System.Windows.Forms.Label();
@@ -82,7 +82,7 @@
             this.guna2Panel1.Controls.Add(this.btnDelivery);
             this.guna2Panel1.Controls.Add(this.guna2Button3);
             this.guna2Panel1.Controls.Add(this.btnKOT);
-            this.guna2Panel1.Controls.Add(this.btnBillList);
+            this.guna2Panel1.Controls.Add(this.btnBill);
             this.guna2Panel1.Controls.Add(this.btnHold);
             this.guna2Panel1.Controls.Add(this.btnNew);
             this.guna2Panel1.Controls.Add(this.lblWaiter);
@@ -212,28 +212,29 @@
             this.btnKOT.TextOffset = new System.Drawing.Point(0, 15);
             this.btnKOT.Click += new System.EventHandler(this.btnKOT_Click);
             // 
-            // btnBillList
+            // btnBill
             // 
-            this.btnBillList.Animated = true;
-            this.btnBillList.BackColor = System.Drawing.Color.Transparent;
-            this.btnBillList.BorderColor = System.Drawing.Color.Transparent;
-            this.btnBillList.BorderRadius = 12;
-            this.btnBillList.BorderThickness = 2;
-            this.btnBillList.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnBillList.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnBillList.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnBillList.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnBillList.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
-            this.btnBillList.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnBillList.ForeColor = System.Drawing.Color.White;
-            this.btnBillList.Image = global::RestarurantManagement.Properties.Resources.receipt;
-            this.btnBillList.ImageOffset = new System.Drawing.Point(12, -7);
-            this.btnBillList.Location = new System.Drawing.Point(421, 19);
-            this.btnBillList.Name = "btnBillList";
-            this.btnBillList.Size = new System.Drawing.Size(85, 85);
-            this.btnBillList.TabIndex = 2;
-            this.btnBillList.Text = "Bill List";
-            this.btnBillList.TextOffset = new System.Drawing.Point(-5, 15);
+            this.btnBill.Animated = true;
+            this.btnBill.BackColor = System.Drawing.Color.Transparent;
+            this.btnBill.BorderColor = System.Drawing.Color.Transparent;
+            this.btnBill.BorderRadius = 12;
+            this.btnBill.BorderThickness = 2;
+            this.btnBill.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBill.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBill.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBill.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBill.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.btnBill.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnBill.ForeColor = System.Drawing.Color.White;
+            this.btnBill.Image = global::RestarurantManagement.Properties.Resources.receipt;
+            this.btnBill.ImageOffset = new System.Drawing.Point(12, -7);
+            this.btnBill.Location = new System.Drawing.Point(421, 19);
+            this.btnBill.Name = "btnBill";
+            this.btnBill.Size = new System.Drawing.Size(85, 85);
+            this.btnBill.TabIndex = 2;
+            this.btnBill.Text = "Bill List";
+            this.btnBill.TextOffset = new System.Drawing.Point(-5, 15);
+            this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
             // 
             // btnHold
             // 
@@ -665,7 +666,7 @@
         private Guna.UI2.WinForms.Guna2Button btnDelivery;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button btnKOT;
-        private Guna.UI2.WinForms.Guna2Button btnBillList;
+        private Guna.UI2.WinForms.Guna2Button btnBill;
         private Guna.UI2.WinForms.Guna2Button btnHold;
         private Guna.UI2.WinForms.Guna2Button btnNew;
         private System.Windows.Forms.Label label1;
