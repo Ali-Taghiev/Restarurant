@@ -91,5 +91,10 @@ namespace RestarurantManagement
             formPOS form = new formPOS();
             form.Show();
         }
+
+        private void btnKitchen_Click(object sender, EventArgs e)
+        {
+            AddControls(new formKitchenView());
+        }
     }
 }

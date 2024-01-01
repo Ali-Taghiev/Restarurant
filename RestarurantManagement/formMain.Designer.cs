@@ -122,6 +122,7 @@
             this.btnKitchen.TabIndex = 2;
             this.btnKitchen.Text = "Kitchen";
             this.btnKitchen.UseTransparentBackground = true;
+            this.btnKitchen.Click += new System.EventHandler(this.btnKitchen_Click);
             // 
             // btnPOS
             // 
@@ -336,7 +337,7 @@
             this.lblUser.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblUser.Location = new System.Drawing.Point(32, 13);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(58, 23);
+            this.lblUser.Size = new System.Drawing.Size(47, 19);
             this.lblUser.TabIndex = 1;
             this.lblUser.Text = "label2";
             // 
@@ -384,7 +385,7 @@
             // 
             // formMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1003, 657);
             this.Controls.Add(this.CenterPanel);

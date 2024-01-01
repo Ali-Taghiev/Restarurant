@@ -142,6 +142,12 @@
     <Compile Include="View\formCategoryView.Designer.cs">
       <DependentUpon>formCategoryView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\formKitchenView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\formKitchenView.Designer.cs">
+      <DependentUpon>formKitchenView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\formProductView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\formCategoryView.resx">
       <DependentUpon>formCategoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\formKitchenView.resx">
+      <DependentUpon>formKitchenView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\formProductView.resx">
       <DependentUpon>formProductView.cs</DependentUpon>

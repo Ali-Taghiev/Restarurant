@@ -264,7 +264,7 @@ namespace RestarurantManagement.Model
 
             if (form.TableName != "")
             {
-                lblTable.Text = "Table: " + form.TableName;
+                lblTable.Text = form.TableName;
                 lblTable.Visible = true;
             }
             else
@@ -278,7 +278,7 @@ namespace RestarurantManagement.Model
 
             if (form2.WaiterName != "")
             {
-                lblWaiter.Text = "Waiter: " + form2.WaiterName;
+                lblWaiter.Text = form2.WaiterName;
                 lblWaiter.Visible = true;
             }
             else
@@ -363,6 +363,15 @@ namespace RestarurantManagement.Model
             }
 
             guna2MessageDialog1.Show("Saved Succesfully..");
+
+            lblTable.Text = "";
+            lblWaiter.Text = "";
+            lblTotal.Text = "0.00";
+            lblTable.Visible = false;
+            lblWaiter.Visible = false;
+            guna2DataGridView1.Rows.Clear();
+            MainId = 0;
+            detailId = 0;
 
         }
     }
