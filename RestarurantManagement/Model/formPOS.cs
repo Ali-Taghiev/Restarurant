@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace RestarurantManagement.Model
 {
@@ -395,9 +396,32 @@ namespace RestarurantManagement.Model
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dt);
 
+            if(dt.Rows[0]["orderType"].ToString()=="Delivery") 
+            {
+            btnDelivery.Checked = true;
+                lblWaiter.Visible = false;
+                lblTable.Visible=false;
+            }
+            else if (dt.Rows[0]["orderType"].ToString() == "Take away")
+            {
+                btnTakeAway.Checked = true;
+                lblWaiter.Visible = false;
+                lblTable.Visible = false;
+            }
+            else
+            {
+                btnDinIn.Checked = true;
+                lblWaiter.Visible = true;
+                lblTable.Visible = true;
+            }
+
+
+
             guna2DataGridView1.Rows.Clear();
             foreach (DataRow item in dt.Rows)
             {
+                lblTable.Text = item["TableName"].ToString();
+                lblWaiter.Text = item["WaiterName"].ToString();
 
                 string detailid = item["DetailID"].ToString();
                 string proName = item["pName"].ToString();
@@ -412,6 +436,24 @@ namespace RestarurantManagement.Model
             }
             GetTotalAmount();
                 
+        }
+
+        private void CheckOut_Click(object sender, EventArgs e)
+        {
+
+            formCheckOut form = new formCheckOut();
+            form.MainID = id;
+            form.amt = Convert.ToDouble(lblTotal.Text);
+            MainClass.BlurBackground(form);
+
+            lblTable.Text = "";
+            lblWaiter.Text = "";
+            lblTotal.Text = "0.00";
+            lblTable.Visible = false;
+            lblWaiter.Visible = false;
+            guna2DataGridView1.Rows.Clear();
+            MainId = 0;
+            
         }
     }
 }

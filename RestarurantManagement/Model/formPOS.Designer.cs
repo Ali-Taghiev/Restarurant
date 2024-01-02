@@ -50,6 +50,7 @@
             this.btnExit = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.CheckOut = new Guna.UI2.WinForms.Guna2Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.CategoryPanel = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -350,6 +351,7 @@
             // 
             // guna2Panel2
             // 
+            this.guna2Panel2.Controls.Add(this.CheckOut);
             this.guna2Panel2.Controls.Add(this.lblTotal);
             this.guna2Panel2.Controls.Add(this.label2);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -358,6 +360,24 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(1141, 108);
             this.guna2Panel2.TabIndex = 0;
+            // 
+            // CheckOut
+            // 
+            this.CheckOut.BackColor = System.Drawing.Color.Transparent;
+            this.CheckOut.BorderRadius = 25;
+            this.CheckOut.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.CheckOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.CheckOut.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.CheckOut.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.CheckOut.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(85)))), ((int)(((byte)(126)))));
+            this.CheckOut.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.CheckOut.ForeColor = System.Drawing.Color.White;
+            this.CheckOut.Location = new System.Drawing.Point(989, 28);
+            this.CheckOut.Name = "CheckOut";
+            this.CheckOut.Size = new System.Drawing.Size(113, 57);
+            this.CheckOut.TabIndex = 4;
+            this.CheckOut.Text = "Check Out";
+            this.CheckOut.Click += new System.EventHandler(this.CheckOut_Click);
             // 
             // lblTotal
             // 
@@ -689,5 +709,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvAmount;
         private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
+        private Guna.UI2.WinForms.Guna2Button CheckOut;
     }
 }
