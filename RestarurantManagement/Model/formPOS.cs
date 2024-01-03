@@ -17,7 +17,11 @@ namespace RestarurantManagement.Model
     public partial class formPOS : Form
     {
         public int MainId = 0;
-        public string OrderType;
+        public int driverId = 0;
+        public string OrderType="";
+        public string customerName = "";
+        public string customerPhone = "";
+
         public formPOS()
         {
             InitializeComponent();
@@ -245,6 +249,16 @@ namespace RestarurantManagement.Model
             lblTable.Visible = false;
             lblWaiter.Visible = false;
             OrderType = "Delivery";
+            btnDelivery.Checked = true;
+            
+            formAddCustomer form = new formAddCustomer();
+            form.MainId = MainId;
+            form.OrderType = OrderType;
+            MainClass.BlurBackground(form);
+            if (form.driverId > 0)
+            {
+                driverId = form.driverId;
+            }
         }
 
         private void btnTakeAway_Click(object sender, EventArgs e)
@@ -254,11 +268,24 @@ namespace RestarurantManagement.Model
             lblTable.Visible = false;
             lblWaiter.Visible = false;
             OrderType = "Take Away";
+            btnTakeAway.Checked = true;
+
+            formAddCustomer form = new formAddCustomer();
+            form.MainId = MainId;
+            form.OrderType = OrderType;
+            MainClass.BlurBackground(form);
+            if (form.txtName.Text!="")
+            {
+                driverId = form.driverId;
+                customerName= form.txtName.Text;
+                customerPhone= form.txtPhone.Text;
+            }
         }
 
         private void btnDinIn_Click(object sender, EventArgs e)
         {
             OrderType = "Din In";
+            btnDinIn.Checked = true;
             formTableSelection form = new formTableSelection();
 
             MainClass.BlurBackground(form);
@@ -291,6 +318,7 @@ namespace RestarurantManagement.Model
 
         private void btnKOT_Click(object sender, EventArgs e)
         {
+            btnKOT.Checked = true;
             //Save Data in database
 
             string query1 = ""; //Main Table
@@ -300,7 +328,7 @@ namespace RestarurantManagement.Model
 
             if(MainId == 0)//Insert
             {
-                query1 = "INSERT INTO tblMain (aDate, aTime, TableName, WaiterName, status, orderType, total, received, change) VALUES (@aDate, @aTime, @TableName, @WaiterName, @status, @orderType, @total, @received, @change); SELECT SCOPE_IDENTITY()";
+                query1 = "INSERT INTO tblMain VALUES (@aDate, @aTime, @TableName, @WaiterName, @status, @orderType, @total, @received, @change,@driverID,@CustName,@CustPhone); SELECT SCOPE_IDENTITY()";
 
             }
             else //Update
@@ -323,8 +351,11 @@ namespace RestarurantManagement.Model
             cmd.Parameters.AddWithValue("@total", Convert.ToDouble(lblTotal.Text)); //as we onyl saving data for kitvhen value will update when  payment received
             cmd.Parameters.AddWithValue("@received", Convert.ToDouble(0));
             cmd.Parameters.AddWithValue("@change", Convert.ToDouble(0));
-                
-            if(MainClass.con.State == ConnectionState.Closed) { MainClass.con.Open(); }
+            cmd.Parameters.AddWithValue("@CustName", customerName);
+            cmd.Parameters.AddWithValue("@CustPhone", customerPhone);
+            cmd.Parameters.AddWithValue("@driverID", driverId);
+
+            if (MainClass.con.State == ConnectionState.Closed) { MainClass.con.Open(); }
 
             if (MainId == 0) { MainId=Convert.ToInt32(cmd.ExecuteScalar()); } else { cmd.ExecuteNonQuery(); }
 
@@ -384,6 +415,7 @@ namespace RestarurantManagement.Model
             if (form.MainID > 0)
             {
                 id = form.MainID;
+                MainId = form.MainID;
                 LoadEntries();
             }
         }
@@ -455,5 +487,101 @@ namespace RestarurantManagement.Model
             MainId = 0;
             
         }
+
+        private void btnHold_Click(object sender, EventArgs e)
+        {//Save Data in database
+
+            string query1 = ""; //Main Table
+            string query2 = ""; //Detail Table
+
+            int detailId = 0;
+
+            if(OrderType == ""){
+                guna2MessageDialog1.Show("Please select order type..");
+                return;
+            }
+
+            if (MainId == 0)//Insert
+            {
+                query1 = "INSERT INTO tblMain VALUES (@aDate, @aTime, @TableName, @WaiterName, @status, @orderType, @total, @received, @change,@driverID,@CustName,@CustPhone); SELECT SCOPE_IDENTITY()";
+
+            }
+            else //Update
+            {
+                query1 = "Update tblMain Set status=@status,total=@total,received=@received,change=@change where MainId=@ID";
+
+            }
+
+
+
+            SqlCommand cmd = new SqlCommand(query1, MainClass.con);
+
+            cmd.Parameters.AddWithValue("@ID", MainId);
+            cmd.Parameters.AddWithValue("@aDate", Convert.ToDateTime(DateTime.Now.Date));
+            cmd.Parameters.AddWithValue("@aTime", DateTime.Now.ToShortTimeString());
+            cmd.Parameters.AddWithValue("@TableName", lblTable.Text);
+            cmd.Parameters.AddWithValue("@WaiterName", lblWaiter.Text);
+            cmd.Parameters.AddWithValue("@status", "Hold");
+            cmd.Parameters.AddWithValue("@orderType", OrderType);
+            cmd.Parameters.AddWithValue("@total", Convert.ToDouble(lblTotal.Text)); //as we onyl saving data for kitvhen value will update when  payment received
+            cmd.Parameters.AddWithValue("@received", Convert.ToDouble(0));
+            cmd.Parameters.AddWithValue("@change", Convert.ToDouble(0));
+            cmd.Parameters.AddWithValue("@CustName", customerName);
+            cmd.Parameters.AddWithValue("@CustPhone", customerPhone);
+            cmd.Parameters.AddWithValue("@driverID", driverId);
+
+            if (MainClass.con.State == ConnectionState.Closed) { MainClass.con.Open(); }
+
+            if (MainId == 0) { MainId = Convert.ToInt32(cmd.ExecuteScalar()); } else { cmd.ExecuteNonQuery(); }
+
+            if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
+
+
+            foreach (DataGridViewRow row in guna2DataGridView1.Rows)
+            {
+                detailId = Convert.ToInt32(row.Cells["dgvid"].Value);
+                if (detailId == 0)
+                {
+                    query2 = "INSERT INTO tblDetails (MainId, proID, qty, price, amount) VALUES (@MainId, @proID, @qty, @price, @amount)";
+
+                }
+                else
+                {
+                    query2 = "Update tblDetails Set proID=@proID,qty=@qty,price=@price,amount=@amount where DetailID=@ID";
+                }
+
+                SqlCommand cmd2 = new SqlCommand(query2, MainClass.con);
+                cmd2.Parameters.AddWithValue("@ID", detailId);
+                cmd2.Parameters.AddWithValue("@MainID", MainId);
+                cmd2.Parameters.AddWithValue("@proID", Convert.ToInt32(row.Cells["dgvproID"].Value));
+                cmd2.Parameters.AddWithValue("@qty", Convert.ToInt32(row.Cells["dgvQty"].Value));
+                cmd2.Parameters.AddWithValue("@price", Convert.ToDouble(row.Cells["dgvPrice"].Value));
+                cmd2.Parameters.AddWithValue("@amount", Convert.ToDouble(row.Cells["dgvAmount"].Value));
+
+
+
+                if (MainClass.con.State == ConnectionState.Closed) { MainClass.con.Open(); }
+
+                cmd2.ExecuteNonQuery();
+
+                if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
+
+
+            }
+
+            guna2MessageDialog1.Show("Saved Succesfully..");
+
+            lblTable.Text = "";
+            lblWaiter.Text = "";
+            lblTotal.Text = "0.00";
+            lblTable.Visible = false;
+            lblWaiter.Visible = false;
+            guna2DataGridView1.Rows.Clear();
+            MainId = 0;
+            detailId = 0;
+
+        }
+
     }
-}
+    }
+

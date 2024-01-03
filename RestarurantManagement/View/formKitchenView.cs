@@ -77,7 +77,7 @@ namespace RestarurantManagement.View
 
                 lb1.Text ="Table : " + dt.Rows[i]["TableName"].ToString();
 
-                lb2.Text = "Waiter Name : " + dt.Rows[i]["TableName"].ToString();
+                lb2.Text = "Waiter Name : " + dt.Rows[i]["WaiterName"].ToString();
                  
                 lb3.Text = "Order Time : " + dt.Rows[i]["aTime"].ToString();
 

@@ -27,7 +27,7 @@ namespace RestarurantManagement.Model
 
         private void LoadData()
         {
-            string query = @"select MainID,TableName,WaiterName,status,total from tblMain where status <> 'Pending'";
+            string query = @"select MainID,TableName,WaiterName,orderType,status,total from tblMain where status <> 'Pending'";
             ListBox lb = new ListBox();
             lb.Items.Add(dgvid);
             lb.Items.Add(dgvTable);

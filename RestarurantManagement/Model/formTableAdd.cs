@@ -49,6 +49,7 @@ namespace RestarurantManagement.Model
             {
                 guna2MessageDialog1.Show("Added Succesfully...");
                 id = 0;
+                txtName.Text = "";
                 txtName.Focus();
             }
         }

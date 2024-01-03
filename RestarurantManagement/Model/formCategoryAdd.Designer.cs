@@ -30,11 +30,8 @@
         {
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnClose
-            // 
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // guna2ImageButton1
             // 
@@ -49,6 +46,19 @@
             // 
             this.label1.Size = new System.Drawing.Size(127, 25);
             this.label1.Text = "Category Add";
+            // 
+            // btnClose
+            // 
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(0, 308);
+            this.panel1.Size = new System.Drawing.Size(434, 82);
             // 
             // txtName
             // 
@@ -91,6 +101,10 @@
             this.Name = "formCategoryAdd";
             this.Text = "formCategoryAdd";
             this.Load += new System.EventHandler(this.formCategoryAdd_Load);
+            this.Controls.SetChildIndex(this.txtName, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

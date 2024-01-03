@@ -50,7 +50,7 @@
             // 
             // label2
             // 
-            this.label2.Size = new System.Drawing.Size(152, 32);
+            this.label2.Size = new System.Drawing.Size(121, 25);
             this.label2.Text = "Category List";
             // 
             // guna2MessageDialog1
@@ -123,6 +123,7 @@
             // 
             this.dgvSno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dgvSno.FillWeight = 70F;
+            this.dgvSno.Frozen = true;
             this.dgvSno.HeaderText = "Sr#";
             this.dgvSno.MinimumWidth = 70;
             this.dgvSno.Name = "dgvSno";
@@ -137,9 +138,13 @@
             // 
             // dgvName
             // 
+            this.dgvName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvName.Frozen = true;
             this.dgvName.HeaderText = "Name";
-            this.dgvName.MinimumWidth = 6;
+            this.dgvName.MaxInputLength = 200;
+            this.dgvName.MinimumWidth = 50;
             this.dgvName.Name = "dgvName";
+            this.dgvName.Width = 691;
             // 
             // dgvedit
             // 

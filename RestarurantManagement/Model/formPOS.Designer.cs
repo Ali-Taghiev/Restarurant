@@ -259,6 +259,7 @@
             this.btnHold.TabIndex = 2;
             this.btnHold.Text = "Hold";
             this.btnHold.TextOffset = new System.Drawing.Point(-5, 15);
+            this.btnHold.Click += new System.EventHandler(this.btnHold_Click);
             // 
             // btnNew
             // 

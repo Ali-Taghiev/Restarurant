@@ -94,11 +94,12 @@ namespace RestarurantManagement
                 DataTable dt = new DataTable();
                 dataAdapter.Fill(dt);
 
-                for (int i = 0; i < lb.Items.Count-1; i++)
+                for (int i = 0; i < lb.Items.Count && i < dt.Columns.Count; i++)
                 {
                     string columnName = ((DataGridViewColumn)lb.Items[i]).Name;
                     dgv.Columns[columnName].DataPropertyName = dt.Columns[i].ToString();
                 }
+
                 dgv.DataSource = dt;
             }
             catch (Exception ex)

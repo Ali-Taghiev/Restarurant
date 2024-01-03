@@ -34,11 +34,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cmboxRole = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnClose
-            // 
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_2);
             // 
             // guna2ImageButton1
             // 
@@ -51,8 +48,21 @@
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(112, 32);
+            this.label1.Size = new System.Drawing.Size(88, 25);
             this.label1.Text = "Staff Add";
+            // 
+            // btnClose
+            // 
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_2);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(0, 509);
+            this.panel1.Size = new System.Drawing.Size(488, 82);
             // 
             // label2
             // 
@@ -60,7 +70,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.Location = new System.Drawing.Point(33, 131);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 28);
+            this.label2.Size = new System.Drawing.Size(52, 21);
             this.label2.TabIndex = 3;
             this.label2.Text = "Name";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -111,7 +121,7 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.Location = new System.Drawing.Point(33, 249);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 28);
+            this.label3.Size = new System.Drawing.Size(54, 21);
             this.label3.TabIndex = 3;
             this.label3.Text = "Phone";
             this.label3.Click += new System.EventHandler(this.label2_Click);
@@ -122,7 +132,7 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.Location = new System.Drawing.Point(33, 367);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 28);
+            this.label4.Size = new System.Drawing.Size(41, 21);
             this.label4.TabIndex = 3;
             this.label4.Text = "Role";
             this.label4.Click += new System.EventHandler(this.label2_Click);
@@ -142,6 +152,7 @@
             "Waiter",
             "Cleaning",
             "Cashier",
+            "Driver",
             "Other"});
             this.cmboxRole.Location = new System.Drawing.Point(38, 413);
             this.cmboxRole.Name = "cmboxRole";
@@ -150,7 +161,7 @@
             // 
             // formStaffAdd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 591);
             this.Controls.Add(this.cmboxRole);
@@ -162,6 +173,14 @@
             this.Name = "formStaffAdd";
             this.Text = "formStaffAdd";
             this.Load += new System.EventHandler(this.formStaffAdd_Load);
+            this.Controls.SetChildIndex(this.txtName, 0);
+            this.Controls.SetChildIndex(this.txtPhone, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.label4, 0);
+            this.Controls.SetChildIndex(this.cmboxRole, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

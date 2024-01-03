@@ -88,14 +88,18 @@ namespace RestarurantManagement.Model
             ht.Add("@Image", imageByteArr);
             if (MainClass.SQL(query, ht) > 0)
             {
-                guna2MessageDialog1.Show("Added Succesfully...");
+                guna2MessageDialog1.Show("Added Successfully...");
                 id = 0;
                 txtName.Text = "";
-                txtboxPrice.Text = "";
-                cmboxCategory.Text = "";
+                txtPrice.Text = "";
+
+                // Clear the selection in the ComboBox
+                cmboxCategory.SelectedIndex = -1;
+
                 txtImage.Image = RestarurantManagement.Properties.Resources.features1;
                 txtName.Focus();
             }
+
         }
     }
 }
