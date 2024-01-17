@@ -27,7 +27,9 @@ namespace RestarurantManagement.Model
         
 
         public int id = 0;
-        public override void btnSave_Click_1(object sender, EventArgs e)
+        
+
+        private void btnAddCategory_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtName.Text))
             {
@@ -59,12 +61,10 @@ namespace RestarurantManagement.Model
             {
                 txtName.Focus();
             }
-                
-            
 
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }

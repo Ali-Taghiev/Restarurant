@@ -43,5 +43,19 @@ namespace RestarurantManagement.Model
         {
             driverId = Convert.ToInt32(cmboxDriver.SelectedValue);
         }
+
+       
+
+        private void btnAddCustomer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        
     }
 }

@@ -34,18 +34,7 @@ namespace RestarurantManagement.Model
                 cmboxCategory.SelectedValue = cID;
             }
         }
-        public override void btnSave_Click_1(object sender, EventArgs e)
-        {
-            
-
-        }
-
-
-
-        private void btnClose_Click_2(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+       
         string filePath;
         private void btnSelectImage_Click(object sender, EventArgs e)
         {
@@ -59,9 +48,17 @@ namespace RestarurantManagement.Model
 
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+       
+
+        private void btnExit_Click(object sender, EventArgs e)
         {
-           if(!string.IsNullOrEmpty(txtName.Text) && !string.IsNullOrEmpty(txtPrice.Text)&& cmboxCategory.SelectedItem!=null) {
+            this.Close();
+        }
+
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtName.Text) && !string.IsNullOrEmpty(txtPrice.Text) && cmboxCategory.SelectedItem != null)
+            {
                 string query = "";
 
                 if (id == 0)
@@ -101,11 +98,10 @@ namespace RestarurantManagement.Model
                     txtName.Focus();
                 }
             }
-           else
+            else
             {
-                txtName.Focus ();
+                txtName.Focus();
             }
-
         }
     }
 }

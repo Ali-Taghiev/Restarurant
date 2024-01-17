@@ -34,6 +34,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cmboxRole = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddStaff = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,16 +53,10 @@
             this.label1.Size = new System.Drawing.Size(88, 25);
             this.label1.Text = "Staff Add";
             // 
-            // btnClose
-            // 
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_2);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
-            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnExit);
+            this.panel1.Controls.Add(this.btnAddStaff);
             this.panel1.Location = new System.Drawing.Point(0, 509);
             this.panel1.Size = new System.Drawing.Size(488, 82);
             // 
@@ -90,7 +86,7 @@
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
-            this.txtName.PlaceholderText = "";
+            this.txtName.PlaceholderText = "New Staff Name";
             this.txtName.SelectedText = "";
             this.txtName.Size = new System.Drawing.Size(325, 45);
             this.txtName.TabIndex = 0;
@@ -110,7 +106,7 @@
             this.txtPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.PasswordChar = '\0';
-            this.txtPhone.PlaceholderText = "";
+            this.txtPhone.PlaceholderText = "Phone Number";
             this.txtPhone.SelectedText = "";
             this.txtPhone.Size = new System.Drawing.Size(325, 45);
             this.txtPhone.TabIndex = 1;
@@ -159,6 +155,42 @@
             this.cmboxRole.Size = new System.Drawing.Size(325, 36);
             this.cmboxRole.TabIndex = 2;
             // 
+            // btnExit
+            // 
+            this.btnExit.AutoRoundedCorners = true;
+            this.btnExit.BorderRadius = 21;
+            this.btnExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExit.FillColor = System.Drawing.Color.Red;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Location = new System.Drawing.Point(369, 25);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(91, 45);
+            this.btnExit.TabIndex = 4;
+            this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnAddStaff
+            // 
+            this.btnAddStaff.AutoRoundedCorners = true;
+            this.btnAddStaff.BorderRadius = 21;
+            this.btnAddStaff.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddStaff.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddStaff.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddStaff.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddStaff.FillColor = System.Drawing.Color.Lime;
+            this.btnAddStaff.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAddStaff.ForeColor = System.Drawing.Color.White;
+            this.btnAddStaff.Location = new System.Drawing.Point(272, 25);
+            this.btnAddStaff.Name = "btnAddStaff";
+            this.btnAddStaff.Size = new System.Drawing.Size(91, 45);
+            this.btnAddStaff.TabIndex = 5;
+            this.btnAddStaff.Text = "Add";
+            this.btnAddStaff.Click += new System.EventHandler(this.btnAddStaff_Click);
+            // 
             // formStaffAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -172,7 +204,6 @@
             this.Controls.Add(this.txtName);
             this.Name = "formStaffAdd";
             this.Text = "formStaffAdd";
-            this.Load += new System.EventHandler(this.formStaffAdd_Load);
             this.Controls.SetChildIndex(this.txtName, 0);
             this.Controls.SetChildIndex(this.txtPhone, 0);
             this.Controls.SetChildIndex(this.label2, 0);
@@ -194,5 +225,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         public Guna.UI2.WinForms.Guna2ComboBox cmboxRole;
+        private Guna.UI2.WinForms.Guna2Button btnExit;
+        private Guna.UI2.WinForms.Guna2Button btnAddStaff;
     }
 }

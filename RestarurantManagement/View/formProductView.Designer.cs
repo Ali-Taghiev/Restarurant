@@ -46,6 +46,8 @@
             // label1
             // 
             this.label1.Location = new System.Drawing.Point(729, 63);
+            this.label1.Size = new System.Drawing.Size(0, 19);
+            this.label1.Text = "";
             // 
             // btnAdd
             // 
@@ -57,7 +59,7 @@
             // 
             // label2
             // 
-            this.label2.Size = new System.Drawing.Size(146, 32);
+            this.label2.Size = new System.Drawing.Size(117, 25);
             this.label2.Text = "Product Add";
             // 
             // guna2MessageDialog1
@@ -198,7 +200,7 @@
             // 
             // formProductView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 549);
             this.Controls.Add(this.guna2DataGridView1);

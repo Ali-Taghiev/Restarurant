@@ -36,31 +36,34 @@ namespace RestarurantManagement.Model
             txtChange.Text=change.ToString();
         }
       
-        public override void btnSave_Click_1(object sender, EventArgs e)
-        {
-            string query = @"Update tblMain Set total =@total, received=@rec,change=@change,status='Paid' where MainID=@id";
-
-            Hashtable ht = new Hashtable();
-            ht.Add("@total",txtBillAmount.Text);
-            ht.Add("@rec",txtPaymentRecieved.Text);
-            ht.Add("@change", txtChange.Text);
-            ht.Add("@id", MainID);
-
-            if(MainClass.SQL(query,ht)>0)
-            {
-                guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-                guna2MessageDialog1.Show("Saved Succesfully");
-                this.Close();
-            }
-
-        }
+        
 
         private void formCheckOut_Load(object sender, EventArgs e)
         {
             txtBillAmount.Text=amt.ToString();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+       
+
+        private void btnSave2_Click(object sender, EventArgs e)
+        {
+            string query = @"Update tblMain Set total =@total, received=@rec,change=@change,status='Paid' where MainID=@id";
+
+            Hashtable ht = new Hashtable();
+            ht.Add("@total", txtBillAmount.Text);
+            ht.Add("@rec", txtPaymentRecieved.Text);
+            ht.Add("@change", txtChange.Text);
+            ht.Add("@id", MainID);
+
+            if (MainClass.SQL(query, ht) > 0)
+            {
+                guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                guna2MessageDialog1.Show("Saved Succesfully");
+                this.Close();
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }

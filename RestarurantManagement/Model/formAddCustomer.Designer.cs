@@ -36,6 +36,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtPhone = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +58,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnExit);
+            this.panel1.Controls.Add(this.btnAddCustomer);
             this.panel1.Location = new System.Drawing.Point(0, 519);
             this.panel1.Size = new System.Drawing.Size(608, 82);
             // 
@@ -132,7 +136,7 @@
             this.txtName.Margin = new System.Windows.Forms.Padding(10);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
-            this.txtName.PlaceholderText = "";
+            this.txtName.PlaceholderText = "Customer Name";
             this.txtName.SelectedText = "";
             this.txtName.Size = new System.Drawing.Size(325, 45);
             this.txtName.TabIndex = 10;
@@ -164,7 +168,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Padding = new System.Windows.Forms.Padding(10);
             this.txtPhone.PasswordChar = '\0';
-            this.txtPhone.PlaceholderText = "";
+            this.txtPhone.PlaceholderText = "Phone Number";
             this.txtPhone.SelectedText = "";
             this.txtPhone.Size = new System.Drawing.Size(325, 45);
             this.txtPhone.TabIndex = 14;
@@ -178,6 +182,42 @@
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox1.TabIndex = 3;
+            // 
+            // btnExit
+            // 
+            this.btnExit.AutoRoundedCorners = true;
+            this.btnExit.BorderRadius = 21;
+            this.btnExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExit.FillColor = System.Drawing.Color.Red;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Location = new System.Drawing.Point(495, 25);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(91, 45);
+            this.btnExit.TabIndex = 6;
+            this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnAddCustomer
+            // 
+            this.btnAddCustomer.AutoRoundedCorners = true;
+            this.btnAddCustomer.BorderRadius = 21;
+            this.btnAddCustomer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddCustomer.FillColor = System.Drawing.Color.Lime;
+            this.btnAddCustomer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAddCustomer.ForeColor = System.Drawing.Color.White;
+            this.btnAddCustomer.Location = new System.Drawing.Point(398, 25);
+            this.btnAddCustomer.Name = "btnAddCustomer";
+            this.btnAddCustomer.Size = new System.Drawing.Size(91, 45);
+            this.btnAddCustomer.TabIndex = 7;
+            this.btnAddCustomer.Text = "Add";
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
             // 
             // formAddCustomer
             // 
@@ -210,5 +250,7 @@
         public Guna.UI2.WinForms.Guna2TextBox txtPhone;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        private Guna.UI2.WinForms.Guna2Button btnExit;
+        private Guna.UI2.WinForms.Guna2Button btnAddCustomer;
     }
 }

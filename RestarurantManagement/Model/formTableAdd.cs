@@ -21,12 +21,8 @@ namespace RestarurantManagement.Model
 
         
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnAddTable_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtName.Text))
             {
@@ -56,6 +52,11 @@ namespace RestarurantManagement.Model
                     txtName.Focus();
                 }
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

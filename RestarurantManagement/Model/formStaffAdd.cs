@@ -23,13 +23,11 @@ namespace RestarurantManagement.Model
 
         }
         public int id = 0;
-        private void formStaffAdd_Load(object sender, EventArgs e)
+       
+       
+        private void btnAddStaff_Click(object sender, EventArgs e)
         {
-
-        }
-        public override void btnSave_Click_1(object sender, EventArgs e)
-        {
-           if(!string.IsNullOrEmpty(txtName.Text) && !string.IsNullOrEmpty(txtPhone.Text)&& cmboxRole.SelectedItem!=null)
+            if (!string.IsNullOrEmpty(txtName.Text) && !string.IsNullOrEmpty(txtPhone.Text) && cmboxRole.SelectedItem != null)
             {
                 string query = "";
 
@@ -60,12 +58,9 @@ namespace RestarurantManagement.Model
                     txtName.Focus();
                 }
             }
-
         }
 
-
-
-        private void btnClose_Click_2(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }

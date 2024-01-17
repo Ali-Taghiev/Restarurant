@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formLogin));
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -37,6 +38,7 @@
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -58,18 +60,18 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(434, 274);
+            this.guna2Panel1.Size = new System.Drawing.Size(391, 274);
             this.guna2Panel1.TabIndex = 0;
             // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::RestarurantManagement.Properties.Resources.user;
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(90, 53);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(95, 51);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(229, 164);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(191, 166);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
@@ -86,7 +88,7 @@
             this.btnLogin.FillColor = System.Drawing.Color.Lime;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(57, 521);
+            this.btnLogin.Location = new System.Drawing.Point(34, 521);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(132, 59);
             this.btnLogin.TabIndex = 2;
@@ -104,7 +106,7 @@
             this.txtboxUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtboxUsername.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtboxUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtboxUsername.Location = new System.Drawing.Point(90, 348);
+            this.txtboxUsername.Location = new System.Drawing.Point(72, 344);
             this.txtboxUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtboxUsername.Name = "txtboxUsername";
             this.txtboxUsername.PasswordChar = '\0';
@@ -124,7 +126,7 @@
             this.txtboxPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtboxPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtboxPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtboxPassword.Location = new System.Drawing.Point(90, 428);
+            this.txtboxPassword.Location = new System.Drawing.Point(72, 424);
             this.txtboxPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtboxPassword.Name = "txtboxPassword";
             this.txtboxPassword.PasswordChar = '●';
@@ -155,26 +157,36 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 279);
+            this.label1.Location = new System.Drawing.Point(68, 279);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(258, 25);
+            this.label1.Size = new System.Drawing.Size(218, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Enter Username and Password";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(85, 399);
+            this.label2.Location = new System.Drawing.Point(67, 395);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 25);
+            this.label2.Size = new System.Drawing.Size(73, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Password";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(68, 320);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 20);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "UserName";
+            // 
             // formLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 609);
+            this.ClientSize = new System.Drawing.Size(391, 601);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtboxPassword);
@@ -205,6 +217,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private System.Windows.Forms.Label label3;
     }
 }
 
