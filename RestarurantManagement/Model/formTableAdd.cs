@@ -28,29 +28,33 @@ namespace RestarurantManagement.Model
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string query = "";
-
-            if (id == 0)
+            if (!string.IsNullOrEmpty(txtName.Text))
             {
-                query = "insert into tables Values(@Name)";
 
-            }
-            else
-            {
-                query = "update tables Set tname =@Name where tid=@id";
+                string query = "";
 
-            }
+                if (id == 0)
+                {
+                    query = "insert into tables Values(@Name)";
 
-            Hashtable ht = new Hashtable();
-            ht.Add("@id", id);
-            ht.Add("@Name", txtName.Text);
+                }
+                else
+                {
+                    query = "update tables Set tname =@Name where tid=@id";
 
-            if (MainClass.SQL(query, ht) > 0)
-            {
-                guna2MessageDialog1.Show("Added Succesfully...");
-                id = 0;
-                txtName.Text = "";
-                txtName.Focus();
+                }
+
+                Hashtable ht = new Hashtable();
+                ht.Add("@id", id);
+                ht.Add("@Name", txtName.Text);
+
+                if (MainClass.SQL(query, ht) > 0)
+                {
+                    guna2MessageDialog1.Show("Added Succesfully...");
+                    id = 0;
+                    txtName.Text = "";
+                    txtName.Focus();
+                }
             }
         }
     }

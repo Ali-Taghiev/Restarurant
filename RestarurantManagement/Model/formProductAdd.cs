@@ -61,43 +61,49 @@ namespace RestarurantManagement.Model
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string query = "";
+           if(!string.IsNullOrEmpty(txtName.Text) && !string.IsNullOrEmpty(txtPrice.Text)&& cmboxCategory.SelectedItem!=null) {
+                string query = "";
 
-            if (id == 0)
-            {
-                query = "insert into products Values(@Name,@Price,@Cat,@Image)";
+                if (id == 0)
+                {
+                    query = "insert into products Values(@Name,@Price,@Cat,@Image)";
 
+                }
+                else
+                {
+                    query = "update products Set pName =@Name,pPrice=@Price,CategoryID=@Cat,pImage=@Image where productId=@id";
+
+                }
+
+                //For Image
+                Image temp = new Bitmap(txtImage.Image);
+                MemoryStream ms = new MemoryStream();
+                temp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                imageByteArr = ms.ToArray();
+                //
+                Hashtable ht = new Hashtable();
+                ht.Add("@id", id);
+                ht.Add("@Name", txtName.Text);
+                ht.Add("@Price", txtPrice.Text);
+                ht.Add("@Cat", Convert.ToInt32(cmboxCategory.SelectedValue));
+                ht.Add("@Image", imageByteArr);
+                if (MainClass.SQL(query, ht) > 0)
+                {
+                    guna2MessageDialog1.Show("Added Successfully...");
+                    id = 0;
+                    txtName.Text = "";
+                    txtPrice.Text = "";
+
+                    // Clear the selection in the ComboBox
+                    cmboxCategory.SelectedIndex = -1;
+
+                    txtImage.Image = RestarurantManagement.Properties.Resources.features1;
+                    txtName.Focus();
+                }
             }
-            else
+           else
             {
-                query = "update products Set pName =@Name,pPrice=@Price,CategoryID=@Cat,pImage=@Image where productId=@id";
-
-            }
-
-            //For Image
-            Image temp = new Bitmap(txtImage.Image);
-            MemoryStream ms = new MemoryStream();
-            temp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-            imageByteArr = ms.ToArray();
-            //
-            Hashtable ht = new Hashtable();
-            ht.Add("@id", id);
-            ht.Add("@Name", txtName.Text);
-            ht.Add("@Price", txtPrice.Text);
-            ht.Add("@Cat", Convert.ToInt32(cmboxCategory.SelectedValue));
-            ht.Add("@Image", imageByteArr);
-            if (MainClass.SQL(query, ht) > 0)
-            {
-                guna2MessageDialog1.Show("Added Successfully...");
-                id = 0;
-                txtName.Text = "";
-                txtPrice.Text = "";
-
-                // Clear the selection in the ComboBox
-                cmboxCategory.SelectedIndex = -1;
-
-                txtImage.Image = RestarurantManagement.Properties.Resources.features1;
-                txtName.Focus();
+                txtName.Focus ();
             }
 
         }

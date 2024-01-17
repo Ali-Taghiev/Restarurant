@@ -145,7 +145,7 @@ namespace RestarurantManagement.View
 
             guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Question;
             guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
-            if (guna2MessageDialog1.Show("Are you sure you want to delete ?") == DialogResult.Yes)
+            if (guna2MessageDialog1.Show("Are you sure you want to complete ?") == DialogResult.Yes)
             {
                 string query = @"Update tblMain Set status ='Complete' where MainID=@ID";
 

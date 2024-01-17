@@ -143,10 +143,10 @@
             this.btnPOS.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPOS.ForeColor = System.Drawing.Color.White;
             this.btnPOS.Image = global::RestarurantManagement.Properties.Resources.pos;
-            this.btnPOS.ImageOffset = new System.Drawing.Point(-12, 0);
-            this.btnPOS.Location = new System.Drawing.Point(34, 424);
+            this.btnPOS.ImageOffset = new System.Drawing.Point(-3, 0);
+            this.btnPOS.Location = new System.Drawing.Point(37, 424);
             this.btnPOS.Name = "btnPOS";
-            this.btnPOS.Size = new System.Drawing.Size(166, 45);
+            this.btnPOS.Size = new System.Drawing.Size(131, 45);
             this.btnPOS.TabIndex = 2;
             this.btnPOS.Text = "POS";
             this.btnPOS.UseTransparentBackground = true;
@@ -172,7 +172,7 @@
             this.btnStaff.ForeColor = System.Drawing.Color.White;
             this.btnStaff.Image = global::RestarurantManagement.Properties.Resources.multiple_users_silhouette;
             this.btnStaff.ImageOffset = new System.Drawing.Point(-3, 0);
-            this.btnStaff.Location = new System.Drawing.Point(28, 373);
+            this.btnStaff.Location = new System.Drawing.Point(20, 373);
             this.btnStaff.Name = "btnStaff";
             this.btnStaff.Size = new System.Drawing.Size(166, 45);
             this.btnStaff.TabIndex = 2;
@@ -200,7 +200,7 @@
             this.btnTables.ForeColor = System.Drawing.Color.White;
             this.btnTables.Image = global::RestarurantManagement.Properties.Resources.table_grid;
             this.btnTables.ImageOffset = new System.Drawing.Point(-3, 0);
-            this.btnTables.Location = new System.Drawing.Point(31, 322);
+            this.btnTables.Location = new System.Drawing.Point(25, 322);
             this.btnTables.Name = "btnTables";
             this.btnTables.Size = new System.Drawing.Size(166, 45);
             this.btnTables.TabIndex = 2;
@@ -284,7 +284,7 @@
             this.btnHome.ForeColor = System.Drawing.Color.White;
             this.btnHome.Image = global::RestarurantManagement.Properties.Resources.home;
             this.btnHome.ImageOffset = new System.Drawing.Point(-3, 0);
-            this.btnHome.Location = new System.Drawing.Point(34, 169);
+            this.btnHome.Location = new System.Drawing.Point(25, 169);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(166, 45);
             this.btnHome.TabIndex = 2;
@@ -311,7 +311,7 @@
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(34, 12);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(117, 39);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(122, 63);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;

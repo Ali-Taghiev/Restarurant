@@ -314,6 +314,7 @@ namespace RestarurantManagement.Model
                 lblWaiter.Text = "";
                 lblTable.Visible = false;
             }
+            btnTakeAway.Checked = false;
         }
 
         private void btnKOT_Click(object sender, EventArgs e)
@@ -405,10 +406,12 @@ namespace RestarurantManagement.Model
             MainId = 0;
             detailId = 0;
 
+            btnKOT.Checked = false;
         }
         public int id = 0;
         private void btnBill_Click(object sender, EventArgs e)
         {
+            btnBill.Checked = true;
             formBillList form = new formBillList();
             MainClass.BlurBackground(form);
 
@@ -418,6 +421,8 @@ namespace RestarurantManagement.Model
                 MainId = form.MainID;
                 LoadEntries();
             }
+
+            btnBill.Checked = false;
         }
         private void LoadEntries()
         {
@@ -489,7 +494,9 @@ namespace RestarurantManagement.Model
         }
 
         private void btnHold_Click(object sender, EventArgs e)
-        {//Save Data in database
+        {
+            btnHold.Checked = true;
+            //Save Data in database
 
             string query1 = ""; //Main Table
             string query2 = ""; //Detail Table
@@ -580,6 +587,8 @@ namespace RestarurantManagement.Model
             MainId = 0;
             detailId = 0;
 
+
+            btnHold.Checked=false;
         }
 
     }

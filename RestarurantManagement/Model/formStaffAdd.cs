@@ -29,33 +29,36 @@ namespace RestarurantManagement.Model
         }
         public override void btnSave_Click_1(object sender, EventArgs e)
         {
-            string query = "";
-
-            if (id == 0)
+           if(!string.IsNullOrEmpty(txtName.Text) && !string.IsNullOrEmpty(txtPhone.Text)&& cmboxRole.SelectedItem!=null)
             {
-                query = "insert into staff Values(@Name,@Phone,@Role)";
+                string query = "";
 
-            }
-            else
-            {
-                query = "update staff Set sName =@Name,sPhone=@Phone,sRole=@Role where staffId=@id";
+                if (id == 0)
+                {
+                    query = "insert into staff Values(@Name,@Phone,@Role)";
 
-            }
+                }
+                else
+                {
+                    query = "update staff Set sName =@Name,sPhone=@Phone,sRole=@Role where staffId=@id";
 
-            Hashtable ht = new Hashtable();
-            ht.Add("@id", id);
-            ht.Add("@Name", txtName.Text);
-            ht.Add("@Phone", txtPhone.Text);
-            ht.Add("@Role", cmboxRole.Text);
+                }
 
-            if (MainClass.SQL(query, ht) > 0)
-            {
-                guna2MessageDialog1.Show("Added Succesfully...");
-                id = 0;
-                txtName.Text = "";
-                txtPhone.Text = "";
-                cmboxRole.SelectedIndex = -1;
-                txtName.Focus();
+                Hashtable ht = new Hashtable();
+                ht.Add("@id", id);
+                ht.Add("@Name", txtName.Text);
+                ht.Add("@Phone", txtPhone.Text);
+                ht.Add("@Role", cmboxRole.Text);
+
+                if (MainClass.SQL(query, ht) > 0)
+                {
+                    guna2MessageDialog1.Show("Added Succesfully...");
+                    id = 0;
+                    txtName.Text = "";
+                    txtPhone.Text = "";
+                    cmboxRole.SelectedIndex = -1;
+                    txtName.Focus();
+                }
             }
 
         }

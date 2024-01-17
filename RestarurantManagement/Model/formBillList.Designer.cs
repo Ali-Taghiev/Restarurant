@@ -41,7 +41,6 @@
             this.dgvStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvedit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dgvdel = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -90,8 +89,7 @@
             this.dgvOrderType,
             this.dgvStatus,
             this.dgvTotal,
-            this.dgvedit,
-            this.dgvdel});
+            this.dgvedit});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -192,18 +190,6 @@
             this.dgvedit.Name = "dgvedit";
             this.dgvedit.Width = 50;
             // 
-            // dgvdel
-            // 
-            this.dgvdel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvdel.FillWeight = 50F;
-            this.dgvdel.HeaderText = "";
-            this.dgvdel.Image = global::RestarurantManagement.Properties.Resources.trash_can;
-            this.dgvdel.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dgvdel.MinimumWidth = 50;
-            this.dgvdel.Name = "dgvdel";
-            this.dgvdel.Visible = false;
-            this.dgvdel.Width = 50;
-            // 
             // formBillList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -234,6 +220,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvTotal;
         private System.Windows.Forms.DataGridViewImageColumn dgvedit;
-        private System.Windows.Forms.DataGridViewImageColumn dgvdel;
     }
 }
