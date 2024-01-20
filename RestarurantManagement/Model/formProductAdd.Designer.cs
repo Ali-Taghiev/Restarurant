@@ -56,6 +56,10 @@
             this.label1.Size = new System.Drawing.Size(117, 25);
             this.label1.Text = "Add Product";
             // 
+            // guna2MessageDialog1
+            // 
+            this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnExit);

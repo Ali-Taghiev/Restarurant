@@ -66,7 +66,7 @@
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(89)))));
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(200, 657);
+            this.guna2Panel1.Size = new System.Drawing.Size(200, 1000);
             this.guna2Panel1.TabIndex = 0;
             // 
             // btnSettings
@@ -85,11 +85,12 @@
             this.btnSettings.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSettings.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSettings.FillColor = System.Drawing.Color.Transparent;
-            this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSettings.ForeColor = System.Drawing.Color.White;
+            this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSettings.ForeColor = System.Drawing.Color.Black;
             this.btnSettings.Image = global::RestarurantManagement.Properties.Resources.settings;
-            this.btnSettings.ImageOffset = new System.Drawing.Point(-3, 0);
-            this.btnSettings.Location = new System.Drawing.Point(28, 526);
+            this.btnSettings.ImageOffset = new System.Drawing.Point(-1, 0);
+            this.btnSettings.ImageSize = new System.Drawing.Size(40, 45);
+            this.btnSettings.Location = new System.Drawing.Point(25, 832);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(166, 45);
             this.btnSettings.TabIndex = 2;
@@ -112,13 +113,14 @@
             this.btnKitchen.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnKitchen.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnKitchen.FillColor = System.Drawing.Color.Transparent;
-            this.btnKitchen.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnKitchen.ForeColor = System.Drawing.Color.White;
+            this.btnKitchen.Font = new System.Drawing.Font("Segoe UI", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnKitchen.ForeColor = System.Drawing.Color.Black;
             this.btnKitchen.Image = global::RestarurantManagement.Properties.Resources.kitchen;
             this.btnKitchen.ImageOffset = new System.Drawing.Point(-3, 0);
-            this.btnKitchen.Location = new System.Drawing.Point(28, 475);
+            this.btnKitchen.ImageSize = new System.Drawing.Size(40, 45);
+            this.btnKitchen.Location = new System.Drawing.Point(25, 732);
             this.btnKitchen.Name = "btnKitchen";
-            this.btnKitchen.Size = new System.Drawing.Size(166, 45);
+            this.btnKitchen.Size = new System.Drawing.Size(175, 45);
             this.btnKitchen.TabIndex = 2;
             this.btnKitchen.Text = "Kitchen";
             this.btnKitchen.UseTransparentBackground = true;
@@ -140,15 +142,17 @@
             this.btnPOS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnPOS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnPOS.FillColor = System.Drawing.Color.Transparent;
-            this.btnPOS.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnPOS.ForeColor = System.Drawing.Color.White;
+            this.btnPOS.Font = new System.Drawing.Font("Segoe UI", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnPOS.ForeColor = System.Drawing.Color.Black;
             this.btnPOS.Image = global::RestarurantManagement.Properties.Resources.pos;
-            this.btnPOS.ImageOffset = new System.Drawing.Point(-3, 0);
-            this.btnPOS.Location = new System.Drawing.Point(37, 424);
+            this.btnPOS.ImageOffset = new System.Drawing.Point(-11, 0);
+            this.btnPOS.ImageSize = new System.Drawing.Size(40, 45);
+            this.btnPOS.Location = new System.Drawing.Point(31, 635);
             this.btnPOS.Name = "btnPOS";
-            this.btnPOS.Size = new System.Drawing.Size(131, 45);
+            this.btnPOS.Size = new System.Drawing.Size(169, 45);
             this.btnPOS.TabIndex = 2;
             this.btnPOS.Text = "POS";
+            this.btnPOS.TextOffset = new System.Drawing.Point(-6, 0);
             this.btnPOS.UseTransparentBackground = true;
             this.btnPOS.Click += new System.EventHandler(this.btnPOS_Click);
             // 
@@ -168,13 +172,14 @@
             this.btnStaff.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnStaff.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnStaff.FillColor = System.Drawing.Color.Transparent;
-            this.btnStaff.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnStaff.ForeColor = System.Drawing.Color.White;
+            this.btnStaff.Font = new System.Drawing.Font("Segoe UI", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnStaff.ForeColor = System.Drawing.Color.Black;
             this.btnStaff.Image = global::RestarurantManagement.Properties.Resources.multiple_users_silhouette;
-            this.btnStaff.ImageOffset = new System.Drawing.Point(-3, 0);
-            this.btnStaff.Location = new System.Drawing.Point(20, 373);
+            this.btnStaff.ImageOffset = new System.Drawing.Point(-6, 0);
+            this.btnStaff.ImageSize = new System.Drawing.Size(40, 45);
+            this.btnStaff.Location = new System.Drawing.Point(17, 542);
             this.btnStaff.Name = "btnStaff";
-            this.btnStaff.Size = new System.Drawing.Size(166, 45);
+            this.btnStaff.Size = new System.Drawing.Size(183, 45);
             this.btnStaff.TabIndex = 2;
             this.btnStaff.Text = "Staff";
             this.btnStaff.UseTransparentBackground = true;
@@ -196,11 +201,12 @@
             this.btnTables.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnTables.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnTables.FillColor = System.Drawing.Color.Transparent;
-            this.btnTables.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnTables.ForeColor = System.Drawing.Color.White;
+            this.btnTables.Font = new System.Drawing.Font("Segoe UI", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnTables.ForeColor = System.Drawing.Color.Black;
             this.btnTables.Image = global::RestarurantManagement.Properties.Resources.table_grid;
             this.btnTables.ImageOffset = new System.Drawing.Point(-3, 0);
-            this.btnTables.Location = new System.Drawing.Point(25, 322);
+            this.btnTables.ImageSize = new System.Drawing.Size(40, 45);
+            this.btnTables.Location = new System.Drawing.Point(25, 451);
             this.btnTables.Name = "btnTables";
             this.btnTables.Size = new System.Drawing.Size(166, 45);
             this.btnTables.TabIndex = 2;
@@ -224,11 +230,12 @@
             this.btnProducts.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnProducts.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnProducts.FillColor = System.Drawing.Color.Transparent;
-            this.btnProducts.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnProducts.ForeColor = System.Drawing.Color.White;
+            this.btnProducts.Font = new System.Drawing.Font("Segoe UI", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnProducts.ForeColor = System.Drawing.Color.Black;
             this.btnProducts.Image = global::RestarurantManagement.Properties.Resources.package;
             this.btnProducts.ImageOffset = new System.Drawing.Point(-3, 0);
-            this.btnProducts.Location = new System.Drawing.Point(31, 271);
+            this.btnProducts.ImageSize = new System.Drawing.Size(40, 45);
+            this.btnProducts.Location = new System.Drawing.Point(33, 364);
             this.btnProducts.Name = "btnProducts";
             this.btnProducts.Size = new System.Drawing.Size(166, 45);
             this.btnProducts.TabIndex = 2;
@@ -252,11 +259,12 @@
             this.btnCategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnCategory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnCategory.FillColor = System.Drawing.Color.Transparent;
-            this.btnCategory.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCategory.ForeColor = System.Drawing.Color.White;
+            this.btnCategory.Font = new System.Drawing.Font("Segoe UI", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnCategory.ForeColor = System.Drawing.Color.Black;
             this.btnCategory.Image = global::RestarurantManagement.Properties.Resources.options_lines;
             this.btnCategory.ImageOffset = new System.Drawing.Point(-3, 0);
-            this.btnCategory.Location = new System.Drawing.Point(34, 220);
+            this.btnCategory.ImageSize = new System.Drawing.Size(40, 45);
+            this.btnCategory.Location = new System.Drawing.Point(36, 288);
             this.btnCategory.Name = "btnCategory";
             this.btnCategory.Size = new System.Drawing.Size(166, 45);
             this.btnCategory.TabIndex = 2;
@@ -280,11 +288,12 @@
             this.btnHome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnHome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnHome.FillColor = System.Drawing.Color.Transparent;
-            this.btnHome.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnHome.ForeColor = System.Drawing.Color.White;
+            this.btnHome.Font = new System.Drawing.Font("Segoe UI", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnHome.ForeColor = System.Drawing.Color.Black;
             this.btnHome.Image = global::RestarurantManagement.Properties.Resources.home;
             this.btnHome.ImageOffset = new System.Drawing.Point(-3, 0);
-            this.btnHome.Location = new System.Drawing.Point(25, 169);
+            this.btnHome.ImageSize = new System.Drawing.Size(40, 45);
+            this.btnHome.Location = new System.Drawing.Point(25, 207);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(166, 45);
             this.btnHome.TabIndex = 2;
@@ -295,11 +304,11 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(12, 72);
+            this.label1.Location = new System.Drawing.Point(0, 116);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 67);
+            this.label1.Size = new System.Drawing.Size(200, 67);
             this.label1.TabIndex = 1;
             this.label1.Text = "Restaurant Management";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -309,7 +318,7 @@
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.Image = global::RestarurantManagement.Properties.Resources.cutlery;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(34, 12);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(34, 50);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(122, 63);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -327,7 +336,7 @@
             this.guna2Panel2.FillColor = System.Drawing.Color.Gainsboro;
             this.guna2Panel2.Location = new System.Drawing.Point(200, 0);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(803, 51);
+            this.guna2Panel2.Size = new System.Drawing.Size(800, 51);
             this.guna2Panel2.TabIndex = 0;
             // 
             // lblUser
@@ -347,7 +356,7 @@
             this.btnExit.CustomClick = true;
             this.btnExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
             this.btnExit.IconColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(746, 12);
+            this.btnExit.Location = new System.Drawing.Point(743, 12);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(45, 29);
             this.btnExit.TabIndex = 0;
@@ -359,7 +368,7 @@
             this.guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.guna2ControlBox3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
             this.guna2ControlBox3.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox3.Location = new System.Drawing.Point(619, 12);
+            this.guna2ControlBox3.Location = new System.Drawing.Point(616, 12);
             this.guna2ControlBox3.Name = "guna2ControlBox3";
             this.guna2ControlBox3.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox3.TabIndex = 0;
@@ -370,7 +379,7 @@
             this.btnMaximize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
             this.btnMaximize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
             this.btnMaximize.IconColor = System.Drawing.Color.White;
-            this.btnMaximize.Location = new System.Drawing.Point(681, 12);
+            this.btnMaximize.Location = new System.Drawing.Point(678, 12);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Size = new System.Drawing.Size(45, 29);
             this.btnMaximize.TabIndex = 0;
@@ -380,14 +389,14 @@
             this.CenterPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CenterPanel.Location = new System.Drawing.Point(200, 51);
             this.CenterPanel.Name = "CenterPanel";
-            this.CenterPanel.Size = new System.Drawing.Size(803, 606);
+            this.CenterPanel.Size = new System.Drawing.Size(800, 949);
             this.CenterPanel.TabIndex = 0;
             // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1003, 657);
+            this.ClientSize = new System.Drawing.Size(1000, 1000);
             this.Controls.Add(this.CenterPanel);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);

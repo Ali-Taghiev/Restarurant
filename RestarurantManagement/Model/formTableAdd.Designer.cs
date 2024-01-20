@@ -50,6 +50,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Add Table";
             // 
+            // guna2MessageDialog1
+            // 
+            this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnExit);

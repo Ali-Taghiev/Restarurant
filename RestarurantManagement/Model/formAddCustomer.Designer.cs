@@ -56,6 +56,10 @@
             this.label1.Text = "Add Customer Info";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // guna2MessageDialog1
+            // 
+            this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnExit);
