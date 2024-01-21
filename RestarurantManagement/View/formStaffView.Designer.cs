@@ -58,7 +58,7 @@
             // 
             this.label2.Size = new System.Drawing.Size(104, 32);
             this.label2.Text = "Staff List";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+           
             // 
             // guna2MessageDialog1
             // 

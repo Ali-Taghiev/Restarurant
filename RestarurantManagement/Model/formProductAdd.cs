@@ -21,6 +21,7 @@ namespace RestarurantManagement.Model
         }
         public int id = 0;
         public int cID = 0;
+        string filePath;
 
         // For Image
         Byte[] imageByteArr;
@@ -38,7 +39,7 @@ namespace RestarurantManagement.Model
             }
         }
 
-        string filePath;
+       
 
         private void btnSelectImage_Click(object sender, EventArgs e)
         {
@@ -105,7 +106,8 @@ namespace RestarurantManagement.Model
                 }
             }
             else
-            {
+            { 
+                
                 txtName.Focus();
             }
         }

@@ -11,10 +11,7 @@ namespace RestarurantManagement.Model
             InitializeComponent();
         }
 
-        private void formCategoryAdd_Load(object sender, EventArgs e)
-        {
-            // Code for form load event (if needed)
-        }
+       
 
         public int id = 0;
 

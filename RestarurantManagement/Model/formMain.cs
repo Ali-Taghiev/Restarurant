@@ -1,12 +1,5 @@
 ﻿using RestarurantManagement.View;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using RestarurantManagement.Model;
 
@@ -37,12 +30,22 @@ namespace RestarurantManagement
         // Method to add controls to the CenterPanel
         public void AddControls(Form f)
         {
+            // Clear existing controls in the CenterPanel
             CenterPanel.Controls.Clear();
+
+            // Set the docking behavior of the provided form to fill the CenterPanel
             f.Dock = DockStyle.Fill;
+
+            // Indicate that the provided form is not a top-level form
             f.TopLevel = false;
+
+            // Add the provided form to the CenterPanel's controls collection
             CenterPanel.Controls.Add(f);
+
+            // Show the form
             f.Show();
         }
+
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -50,10 +53,7 @@ namespace RestarurantManagement
             Application.Exit();
         }
 
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
-        {
-            // Code for the click event of the PictureBox (if needed)
-        }
+        
 
         private void formMain_Load(object sender, EventArgs e)
         {

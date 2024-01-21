@@ -221,7 +221,7 @@
             this.btnAddCustomer.Size = new System.Drawing.Size(91, 45);
             this.btnAddCustomer.TabIndex = 7;
             this.btnAddCustomer.Text = "Add";
-            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
+          
             // 
             // formAddCustomer
             // 

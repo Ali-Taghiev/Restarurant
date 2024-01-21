@@ -13,10 +13,11 @@ namespace RestarurantManagement
 {
     internal class MainClass
     {
-
+        // Connection string for the database
         public static readonly string con_string = "Data Source =LAPTOP-44; Initial Catalog=Restaurant;Integrated Security=true;TrustServerCertificate=true;";
         public static SqlConnection con = new SqlConnection(con_string);
 
+        // Method to check if a user is valid
         public static bool isValidUser(string user, string pass)
         {
             bool isValid = false;
@@ -33,14 +34,12 @@ namespace RestarurantManagement
             {
                 isValid = true;
                 USER = dt.Rows[0]["uName"].ToString();
-
             }
-
-
-
 
             return isValid;
         }
+
+        // Property to get the current user
         public static string user;
         public static string USER
         {
@@ -48,9 +47,7 @@ namespace RestarurantManagement
             private set { user = value; }
         }
 
-
-        //Method for CRUD operations
-
+        // Method for CRUD operations
         public static int SQL(string query, Hashtable ht)
         {
             int result = 0;
@@ -70,7 +67,7 @@ namespace RestarurantManagement
             }
             catch (Exception ex)
             {
-
+                // Display error message in a MessageBox
                 MessageBox.Show(ex.ToString());
                 con.Close();
             }
@@ -78,14 +75,12 @@ namespace RestarurantManagement
             return result;
         }
 
-        // For Loading Data from DATabase
-
+        // Method for loading data into DataGridView and ListBox
         public static void LoadData(string query, DataGridView dgv, ListBox lb)
         {
-
-            //Serial no in Datagridview
-
+            // Serial number in DataGridView
             dgv.CellFormatting += new DataGridViewCellFormattingEventHandler(dgv_CellFormatting);
+
             try
             {
                 SqlCommand cmd = new SqlCommand(query, con);
@@ -104,16 +99,15 @@ namespace RestarurantManagement
             }
             catch (Exception ex)
             {
-
+                // Display error message in a MessageBox
                 MessageBox.Show(ex.ToString());
                 con.Close();
             }
-
-
         }
+
+        // Event handler for formatting DataGridView cells
         private static void dgv_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-
             Guna.UI2.WinForms.Guna2DataGridView dgv = (Guna.UI2.WinForms.Guna2DataGridView)sender;
             int count = 0;
 
@@ -124,13 +118,12 @@ namespace RestarurantManagement
             }
         }
 
-        //Blur background when other form opened
+        // Blur background when another form is opened
         public static void BlurBackground(Form Model)
         {
             Form Background = new Form();
             using (Model)
             {
-
                 Background.StartPosition = FormStartPosition.Manual;
                 Background.FormBorderStyle = FormBorderStyle.None;
                 Background.Opacity = 0.5d;
@@ -145,13 +138,11 @@ namespace RestarurantManagement
             }
         }
 
-
-        //Fill ComboBoxes
-
-        public static void ComboBoxFill(string query , ComboBox cb)
+        // Fill ComboBox with data from the database
+        public static void ComboBoxFill(string query, ComboBox cb)
         {
-            SqlCommand cmd = new SqlCommand(query,con);
-                cmd.CommandType = CommandType.Text;
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -160,8 +151,6 @@ namespace RestarurantManagement
             cb.ValueMember = "id";
             cb.DataSource = dt;
             cb.SelectedIndex = -1;
-
         }
-
     }
 }

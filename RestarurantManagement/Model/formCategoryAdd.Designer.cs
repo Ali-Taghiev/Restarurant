@@ -137,7 +137,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "formCategoryAdd";
             this.Text = "formCategoryAdd";
-            this.Load += new System.EventHandler(this.formCategoryAdd_Load);
+          
             this.Controls.SetChildIndex(this.txtName, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
