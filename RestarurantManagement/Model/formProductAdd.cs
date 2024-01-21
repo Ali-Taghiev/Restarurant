@@ -22,33 +22,35 @@ namespace RestarurantManagement.Model
         public int id = 0;
         public int cID = 0;
 
-        //For Image
+        // For Image
         Byte[] imageByteArr;
+
         private void formProductAdd_Load(object sender, EventArgs e)
         {
+            // Load categories into the ComboBox
             string query = "select catID 'id' ,catName 'name' from category ";
             MainClass.ComboBoxFill(query, cmboxCategory);
 
+            // If a category ID is provided, set it in the ComboBox
             if (cID > 0)
             {
                 cmboxCategory.SelectedValue = cID;
             }
         }
-       
+
         string filePath;
+
         private void btnSelectImage_Click(object sender, EventArgs e)
         {
+            // Open a file dialog to select an image file
             OpenFileDialog fd = new OpenFileDialog();
-            fd.Filter="Images(.png, .jpg)|* .png; *.jpg";
+            fd.Filter = "Images(.png, .jpg)|*.png; *.jpg";
             if (fd.ShowDialog() == DialogResult.OK)
             {
                 filePath = fd.FileName;
-                txtImage.Image= new Bitmap(filePath);
+                txtImage.Image = new Bitmap(filePath);
             }
-
         }
-
-       
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -57,33 +59,36 @@ namespace RestarurantManagement.Model
 
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
+            // Check if the necessary fields are not empty
             if (!string.IsNullOrEmpty(txtName.Text) && !string.IsNullOrEmpty(txtPrice.Text) && cmboxCategory.SelectedItem != null)
             {
                 string query = "";
 
+                // Construct the SQL query based on whether it's an insert or update
                 if (id == 0)
                 {
                     query = "insert into products Values(@Name,@Price,@Cat,@Image)";
-
                 }
                 else
                 {
                     query = "update products Set pName =@Name,pPrice=@Price,CategoryID=@Cat,pImage=@Image where productId=@id";
-
                 }
 
-                //For Image
+                // Convert the image to a byte array
                 Image temp = new Bitmap(txtImage.Image);
                 MemoryStream ms = new MemoryStream();
                 temp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
                 imageByteArr = ms.ToArray();
-                //
+
+                // Set up the parameters for the SQL query
                 Hashtable ht = new Hashtable();
                 ht.Add("@id", id);
                 ht.Add("@Name", txtName.Text);
                 ht.Add("@Price", txtPrice.Text);
                 ht.Add("@Cat", Convert.ToInt32(cmboxCategory.SelectedValue));
                 ht.Add("@Image", imageByteArr);
+
+                // Execute the SQL query
                 if (MainClass.SQL(query, ht) > 0)
                 {
                     guna2MessageDialog1.Show("Added Successfully...");
@@ -94,6 +99,7 @@ namespace RestarurantManagement.Model
                     // Clear the selection in the ComboBox
                     cmboxCategory.SelectedIndex = -1;
 
+                    // Set the default image
                     txtImage.Image = RestarurantManagement.Properties.Resources.features1;
                     txtName.Focus();
                 }

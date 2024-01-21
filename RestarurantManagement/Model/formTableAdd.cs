@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -17,27 +16,22 @@ namespace RestarurantManagement.Model
         {
             InitializeComponent();
         }
+
         public int id = 0;
-
-        
-
 
         private void btnAddTable_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtName.Text))
             {
-
                 string query = "";
 
                 if (id == 0)
                 {
                     query = "insert into tables Values(@Name)";
-
                 }
                 else
                 {
-                    query = "update tables Set tname =@Name where tid=@id";
-
+                    query = "update tables Set tname = @Name where tid = @id";
                 }
 
                 Hashtable ht = new Hashtable();
@@ -46,11 +40,21 @@ namespace RestarurantManagement.Model
 
                 if (MainClass.SQL(query, ht) > 0)
                 {
-                    guna2MessageDialog1.Show("Added Succesfully...");
+                    guna2MessageDialog1.Show("Table added/updated successfully.");
                     id = 0;
                     txtName.Text = "";
                     txtName.Focus();
                 }
+                else
+                {
+                    // Handle the case where the SQL query execution fails
+                    guna2MessageDialog1.Show("Failed to add/update table. Please try again.");
+                }
+            }
+            else
+            {
+                // Handle the case where the table name is not provided
+                guna2MessageDialog1.Show("Please enter the table name.");
             }
         }
 

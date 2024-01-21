@@ -20,24 +20,26 @@ namespace RestarurantManagement
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            // Exit the application when the Exit button is clicked
             Application.Exit();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-             if(MainClass.isValidUser(txtboxUsername.Text, txtboxPassword.Text) == false)
+            // Check if the entered username and password are valid
+            if (MainClass.isValidUser(txtboxUsername.Text, txtboxPassword.Text) == false)
             {
+                // Show a message if the username or password is invalid
                 guna2MessageDialog1.Show("Invalid Username or Password");
                 return;
             }
             else
             {
+                // If the username and password are valid, hide the login form and show the main form
                 this.Hide();
-                formMain frm =new formMain();
+                formMain frm = new formMain();
                 frm.Show();
-            } 
+            }
         }
-
-       
     }
 }
