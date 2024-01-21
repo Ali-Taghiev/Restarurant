@@ -19,6 +19,7 @@ namespace RestarurantManagement.Model
         // Properties to store POS data
         public int MainId = 0;
         public int driverId = 0;
+        public int id = 0;
         public string OrderType = "";
         public string customerName = "";
         public string customerPhone = "";
@@ -294,7 +295,7 @@ namespace RestarurantManagement.Model
             btnTakeAway.Checked = false;
         }
 
-        private void btnKOT_Click(object sender, EventArgs e)
+        public void btnKOT_Click(object sender, EventArgs e)
         {
             btnKOT.Checked = true;
             //Save Data in database
@@ -385,7 +386,8 @@ namespace RestarurantManagement.Model
 
             btnKOT.Checked = false;
         }
-        public int id = 0;
+
+       
         private void btnBill_Click(object sender, EventArgs e)
         {
             btnBill.Checked = true;

@@ -41,12 +41,7 @@ namespace RestarurantManagement.Model
             driverId = Convert.ToInt32(cmboxDriver.SelectedValue);
         }
 
-        
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            // Close the form when the Exit button is clicked
-            this.Close();
-        }
+      
+       
     }
 }

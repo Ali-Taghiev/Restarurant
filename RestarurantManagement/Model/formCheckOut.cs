@@ -36,21 +36,9 @@ namespace RestarurantManagement.Model
 
         private void btnSave2_Click(object sender, EventArgs e)
         {
-            string query;
+            // SQL query to update transaction details in the database
+            string query = @"Update tblMain Set total = @total, received = @rec, change = @change, status = 'Paid' where MainID = @id";
 
-            if (MainID == 0)
-            {
-                // Insert query
-                query = @"INSERT INTO tblMain (total, received, change, status)
-              VALUES (@total, @rec, @change, 'Paid');";
-            }
-            else
-            {
-                // Update query
-                query = @"UPDATE tblMain
-              SET total = @total, received = @rec, change = @change, status = 'Paid'
-              WHERE MainID = @id;";
-            }
             // Hashtable to store parameter values for the SQL query
             Hashtable ht = new Hashtable();
             ht.Add("@total", txtBillAmount.Text);
@@ -66,6 +54,7 @@ namespace RestarurantManagement.Model
                 guna2MessageDialog1.Show("Saved Successfully");
                 this.Close();
             }
+            this.Close();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
