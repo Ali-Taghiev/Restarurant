@@ -51,6 +51,7 @@
             // 
             // guna2MessageDialog1
             // 
+            this.guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
             this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
             // 
             // panel1

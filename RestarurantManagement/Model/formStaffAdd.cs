@@ -18,7 +18,10 @@ namespace RestarurantManagement.Model
         }
 
         public int id = 0;
+        private void label2_Click(object sender, EventArgs e)
+        {
 
+        }
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtName.Text) && !string.IsNullOrEmpty(txtPhone.Text) && cmboxRole.SelectedItem != null)
