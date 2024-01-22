@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.btnAdd = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -36,23 +35,13 @@
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(548, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Search";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.Location = new System.Drawing.Point(48, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 32);
+            this.label2.Size = new System.Drawing.Size(111, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "Header Text";
             // 
@@ -122,7 +111,6 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtboxSearch);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -134,7 +122,6 @@
         }
 
         #endregion
-        public System.Windows.Forms.Label label1;
         public Guna.UI2.WinForms.Guna2TextBox txtboxSearch;
         public Guna.UI2.WinForms.Guna2ImageButton btnAdd;
         public System.Windows.Forms.Label label2;

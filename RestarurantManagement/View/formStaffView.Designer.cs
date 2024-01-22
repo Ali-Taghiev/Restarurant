@@ -42,9 +42,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(744, 63);
+            
             // 
             // btnAdd
             // 
@@ -197,7 +195,7 @@
             this.Name = "formStaffView";
             this.Text = "formStaffView";
             this.Load += new System.EventHandler(this.formStaffView_Load);
-            this.Controls.SetChildIndex(this.label1, 0);
+           
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.btnAdd, 0);
             this.Controls.SetChildIndex(this.guna2Separator1, 0);

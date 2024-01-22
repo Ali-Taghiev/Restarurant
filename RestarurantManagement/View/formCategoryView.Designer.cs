@@ -177,7 +177,7 @@
             this.Text = "formCategoryView";
             this.Load += new System.EventHandler(this.formCategoryView_Load);
             this.Controls.SetChildIndex(this.guna2Separator1, 0);
-            this.Controls.SetChildIndex(this.label1, 0);
+           
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.btnAdd, 0);
             this.Controls.SetChildIndex(this.guna2DataGridView1, 0);

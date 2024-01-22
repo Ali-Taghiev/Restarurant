@@ -42,13 +42,7 @@
             this.dgvdel = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(729, 63);
-            this.label1.Size = new System.Drawing.Size(0, 19);
-            this.label1.Text = "";
-            // 
+           
             // btnAdd
             // 
             this.btnAdd.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
@@ -207,7 +201,7 @@
             this.Name = "formProductView";
             this.Text = "formProductView";
             this.Load += new System.EventHandler(this.formProductView_Load);
-            this.Controls.SetChildIndex(this.label1, 0);
+          
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.btnAdd, 0);
             this.Controls.SetChildIndex(this.guna2Separator1, 0);

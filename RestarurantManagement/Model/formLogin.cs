@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestarurantManagement.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,6 +39,7 @@ namespace RestarurantManagement
                 // If the username and password are valid, hide the login form and show the main form
                 this.Hide();
                 formMain frm = new formMain();
+                frm.AddControls(new FormHome());
                 frm.Show();
             }
         }

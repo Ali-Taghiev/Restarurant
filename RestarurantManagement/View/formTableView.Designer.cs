@@ -40,10 +40,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(621, 59);
-            // 
             // btnAdd
             // 
             this.btnAdd.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
@@ -51,6 +47,11 @@
             this.btnAdd.HoverState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnAdd.ImageFlip = Guna.UI2.WinForms.Enums.FlipOrientation.Normal;
             this.btnAdd.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            // 
+            // label2
+            // 
+            this.label2.Size = new System.Drawing.Size(95, 25);
+            this.label2.Text = "Add Table";
             // 
             // guna2MessageDialog1
             // 
@@ -168,7 +169,7 @@
             // 
             // formTableView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 584);
             this.Controls.Add(this.guna2DataGridView1);
@@ -176,7 +177,6 @@
             this.Text = "formTableView";
             this.Load += new System.EventHandler(this.formTableView_Load);
             this.Controls.SetChildIndex(this.guna2Separator1, 0);
-            this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.btnAdd, 0);
             this.Controls.SetChildIndex(this.guna2DataGridView1, 0);
